@@ -1,0 +1,109 @@
+﻿<html><head><title>CBY's Code</title></head><body><h1>因的程式學習天地</h1><marquee >  別亂分享，流量太大我會被鎖喔!</marquee><marquee behavior="alternate"><img src="http://comic.qq.com/images/comic/2008/01/02/april/tsj/016.gif"></marquee><br><li><a href="#c1"STYLE="text-decoration:none">共用資料</a><li><a href="#c2"STYLE="text-decoration:none">R語言</a><li><a href="#c3"STYLE="text-decoration:none">HTML</a><li><a href="#c4"STYLE="text-decoration:none">Python</a></span></pre><pre style="color: #000000; background: #FDEEF5; border: outset #ccc;font-size: 12pt;"><span ><strong>本次更新部分</strong><ul><li>文字修正
+</ul></span></pre><div style="text-align:left;background-color:#FFE4E1;padding:5px;margin-bottom:5px;"><h3><a name="c1">共用資料</a></h3></div><a href="http://www.w3schools.com/"STYLE="text-decoration:none"target="_blank">w3schools</a><br><br><a href="http://codebeautify.org/" STYLE="text-decoration:none" target="_blank">codebeautify</a><br><br><a href="https://www.codecademy.com/learn" STYLE="text-decoration:none" target="_blank">Learn to code</a><br><br><a href="http://www.ifreesite.com/color/" STYLE="text-decoration:none" target="_blank">RGB色碼表</a><br><br><div style="text-align:left;background-color:#FFEFD5;padding:5px;margin-bottom:5px;"><h3><a name="c2">R語言</a></h3></div><font color="#8B4726" face="Algerian" size="5">如何安裝packages</font><br><ol type=A><li>連上網路後，輸入install.packages("套件名稱")即可安裝某套件
+<li>在安裝某套件後，輸入library(套件名稱)可引入該套件，之後才可使用它的功能
+<li>連上網路後，輸入update.packages()可更新已安裝的所有套件
+</ol><font color="#8B4726" face="標楷體" size="5">基本功能</font><br><ul><li>叫回過去打過的程式碼<br>
+history()<br><br><li>查詢已擁有的套件<br>
+search()<br><br><li>查詢已擁有的套件位置<br>
+searchpaths()<br><br><li>顯示套件的範例<br>
+example(gtrends)<br><br></ul><font color="#8B4726" face="標楷體" size="5">help相關指令</font><br><ul><li>知道指令名稱<br>
+?plot<br><br><li>不知道指令正確名稱<br>
+??plot<br><br><li>函數名稱中有plot<br>
+apropos("plot")<br><br><li>尋找plot在哪個package<br>
+find("plot")<br>
+getAnywhere("plot")<br><br><li>查詢plot參數<br>
+args("plot")<br><br></ul><font color="#8B4726" face="標楷體" size="5">資料輸出與輸入路徑</font><br><ul><li>檢視資料夾底下有什麼檔案<br>
+dir()<br><br><li>設定工作資料夾路徑:<br>
+setwd("D:\\")<br>
+setwd("D:/")<br><br></ul><font color="#8B4726" face="標楷體" size="5">讀檔與寫檔</font><br><ul><li>以逗號分隔讀入資料<br>
+read.csv("檔名")<br><br><li>以Tab分隔資料<br>
+read.table("檔名")<br><br><li>設定分隔符號<br>
+read.table("檔名",sep=",")<br>
+read.table("檔名",sep="\t")<br><br><li>將標題讀入，加上row.names可把文字資料左移，方便只處理數字資料<br>
+read.table("檔名",header=T,row.names=1)<br><br><li>寫檔:<br>
+write.csv("檔名")<br>
+write.table("檔名")<br><br><li>去掉Tab產生的雙引號<br>
+write.table("檔名",quote=F)<br><br><li>去掉橫軸及縱軸標題<br>
+write.table("檔名"row.names=F,col.names=F)<br><br><li>利用getwd()可確認目前工作位置，設定好工作位置後，寫檔和讀檔就不用寫了<br>
+getwd()<br><br></ul><font color="#8B4726" face="標楷體" size="5">資料種類</font><br><ul><li>確認資料型態<br>
+x=1<br>
+class(x)<br>
+is.character(x)<br><br><li>轉變資料型態<br>
+as.numeric(x)<br><br></ul><font color="#8B4726" face="標楷體" size="5">一維資料:</font><br><ul><li>vector(資料型態為numeric)<br>
+x=c(2.5,3.5,1.0)<br>
+length(x)<br><br><li>factor(資料型態為numeric)<br>
+factor(c(1,1,"NCHU","NCHU","PHYS","NCHU_PHYS"))<br><br></ul><font color="#8B4726" face="標楷體" size="5">二維資料:</font><br><ul><li>matrix<br>
+matrix(c(1:6),nrow=3,ncol=2)<br>
+matrix(1:6,nrow=3,ncol=2,byrow=T)<br>
+x=matrix(1:6,nrow=3,ncol=2,byrow=T)<br>
+dim(x)<br><br><li>data.frame<br>
+data.frame(Rank=c(1,2,3),Department=c("PHYS","MATH","CHEM"))<br><br></ul><font color="#8B4726" face="標楷體" size="5">巢狀資料:</font><br><ul><li>list:<br>
+x=list(A=1:3,B=matrix(1:6,nrow=3,ncol=2))<br>
+names(x)<br>
+length(x)<br><br></ul><strong>google trend 的資料</strong><br><select onchange="window.open(this.options[this.selectedIndex].value)"><option>...</option><option value="https://www.google.com/trends/"STYLE="text-decoration:none"target="_blank">Google 搜尋趨勢</option><option value="https://cran.r-project.org/web/packages/gtrendsR/index.html"STYLE="text-decoration:none"target="_blank">gtrendsR package</option><option value="https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf"STYLE="text-decoration:none"target="_blank">gtrendsR 說明書(英文)</option><option value="https://www.youtube.com/watch?v=1SJkpfyY22E"STYLE="text-decoration:none"target="_blank">Downloading Data from Google Trends And Analyzing It With R</option></select><br><br><a href="http://bychtmltest.pancakeapps.com/htmltest/Rnote.html"STYLE="text-decoration:none"target="_blank">因的R語言筆記</a><br><br><div style="text-align:left;background-color:#FFFACD;padding:5px;margin-bottom:5px;"><h3><a name="c3">HTML</a></h3></div><ul><li><a href="http://www.w3schools.com/html/default.asp"STYLE="text-decoration:none"target="_blank">HTML Tutorial</a><br><br><li><a href="https://sofree.cc/dropbox-pancake-io/"STYLE="text-decoration:none"target="_blank">由DropBox建立免費HTML空間</a><br><br><li><a href="https://www.pancake.io/"STYLE="text-decoration:none"target="_blank">Pancake.io</a><br><br><li><a href="http://www.powmo.com/"STYLE="text-decoration:none"target="_blank">HTML教學導覽</a><br><br><li><a href="http://web.thu.edu.tw/hzed/www/tag.htm"STYLE="text-decoration:none"target="_blank">HTML標籤列表</a><br><br><li><a href="http://www.runoob.com/html/html-tutorial.html"STYLE="text-decoration:none"target="_blank">HTML 教程(菜鳥教程)</a><br><br><li><a href="http://shandian.biz/664.html"STYLE="text-decoration:none"target="_blank">div style常用屬性和實例代碼</a><br><br><li><a href="http://hebie.pixnet.net/blog/post/4309444-%E8%AA%9E%E6%B3%95%E2%94%82css-%E5%8F%83%E6%95%B8%E7%9A%84%E6%87%89%E7%94%A8"STYLE="text-decoration:none"target="_blank">CSS參數的應用</a><br><br><li><a href="http://chibli.pixnet.net/blog/post/42010318-%5Bhtml%E8%AA%9E%E6%B3%95%5D-%E4%B8%8B%E6%8B%89%E5%BC%8F%E9%81%B8%E5%96%AE%E7%9A%84html%E8%AA%9E%E6%B3%95"STYLE="text-decoration:none"target="_blank">下拉式選單的html語法</a><br><br></ul><b>XML的資料</b><br><select onchange="window.open(this.options[this.selectedIndex].value)"><option>...</option><option value="http://www.w3schools.com/xml/default.asp"STYLE="text-decoration:none"target="_blank">XML Tutorial</option><option value="http://yes.nctu.edu.tw/Lecture/NewTech/C05_NewEra/XML/IntroXML/"STYLE="text-decoration:none"target="_blank">XML入門</option><option value="http://molecular-service-science.com/2016/04/07/r-xml-in-practice/"STYLE="text-decoration:none"target="_blank">初心者也會用的R語言讀取XML資料分析實戰教學！(一)</option><option value="http://molecular-service-science.com/2016/04/12/r-xml-in-practice-2/"STYLE="text-decoration:none"target="_blank">初心者也會用的R語言讀取XML資料分析實戰教學！(二)</option><option value="http://molecular-service-science.com/2016/04/19/r-xml-in-practice-3/"STYLE="text-decoration:none"target="_blank">初心者也會用的R語言讀取XML資料分析實戰教學！(三)</option><option value="https://cran.r-project.org/web/packages/XML/index.html"STYLE="text-decoration:none"target="_blank">XML package</option><option value="https://cran.r-project.org/web/packages/scrapeR/index.html"STYLE="text-decoration:none"target="_blank">scrapeR package</option></select><br><br><div style="text-align:left;background-color:#F0FFF0;padding:5px;margin-bottom:5px;"><h3><a name="c4">Python</a></h3></div><font color="#8B4726" face="標楷體" size="5">簡介</font><br>
+       python本身要進行特殊函數的計算的話，不像matlab會幫你在開啟的時候，裝好所有函數，而是在你需要的時候，自己敲程式碼，import函式庫出來，才可以用。<br><a href="http://python-xy.github.io/"STYLE="text-decoration:none"target="_blank">程式載點</a><br><br><b>python學習網站</b><br><select onchange="window.open(this.options[this.selectedIndex].value)"><option>...</option><option value="http://www.runoob.com/python/python-tutorial.html"STYLE="text-decoration:none"target="_blank">Python 基礎教程</option><option value="http://openhome.cc/Gossip/Python/index.html"STYLE="text-decoration:none"target="_blank">語言技術：Python Gossip</option><option value="https://docs.python.org/2/library/functions.html"STYLE="text-decoration:none"target="_blank"> Built-in Functions</option></select><br><br><font color="#8B4726" face="標楷體" size="5">基本符號與功能</font><br><ul><li>int:整數
+<li>float:小數
+<li>complex:複數
+<li># 附註
+<li>% 取餘數
+<li>** 次方
+<li>"a" 字串
+<li>'\n' 空一行
+<li> from numpy import *<br>
+自動搜尋未標明的指令在哪個函數庫裡<br><br><li>import numpy as np<br>
+將numpy這個函示庫名稱重新命為np<br><br><li>等差數列(差為整數)<br>
+range(1,11,2)<br><br></ul><li>等差數列(差為整數，且只能在迴圈中使用)<br>
+xrange(1,11,2)<br><br></ul><font color="#8B4726" face="標楷體" size="5">串列(list)</font><br><ul><li>叫出串列中的元素<br>
+list1[0]<br>
+list2[1:5]<br><br><li>添加元素<br>
+list.append(0)<br><br><li>刪除元素<br>
+del list[0]<br><br><li>計算串列的長度<br>
+len(list)<br><br></ul><font color="#8B4726" face="標楷體" size="5">迴圈</font><br>
+       在python裡，迴圈只有一開始的指令，沒有end之類的指令給他知道該迴圈要跑到哪裡。因此，他是用4個空白鍵(或是按一下<b>Tab鍵</b>)，來決定你的迴圈的結束。因此，如果在程式碼亂打空白鍵，很容易出現錯誤。<br><ul><li>IF LOOP<br><pre style="color: #000000; background: #F5FFE0; border: outset #ccc;font-size: 12pt;">
+if a==1:<br>
+    x=1<br>
+elif a==2:<br>
+    x=2<br>
+else:<br>
+    x=3</pre><br><li>FOR LOOP<br><pre style="color: #000000; background: #F5FFE0; border: outset #ccc;font-size: 12pt;">
+for i in xrange(10):<br>
+    x=x+1</pre><br><li>WHILE LOOP<br><pre style="color: #000000; background: #F5FFE0; border: outset #ccc;font-size: 12pt;">
+while x>1:<br>
+    x=x+1</pre><br></ul><font color="#8B4726" face="標楷體" size="5">自訂函數</font><br><pre style="color: #000000; background: #F5FFE0; border: outset #ccc;font-size: 12pt;">
+def plus(a,b):<br>
+    c=a+b<br>
+    return a,b,c<br>
+x,y,z=plus(1,2)<br></pre><br><br><font color="#8B4726" face="標楷體" size="5">階層與組合數函數(<a href="http://docs.scipy.org/doc/scipy-0.16.0/reference/misc.html"STYLE="text-decoration:none"target="_blank">Scipy.misc</a>)</font><br><pre style="color: #000000; background: #F5FFE0; border: outset #ccc;font-size: 12pt;">
+import scipy.misc as scm<br><b>#階層</b><br>
+x=scm.factorial(3)<br><b>#組合數</b><br>
+y=scm.comb(5,2)<br><br></pre><font color="#8B4726" face="標楷體" size="5">作圖(<a href="http://matplotlib.org/gallery.html"STYLE="text-decoration:none"target="_blank">matplotlib.pyplot</a>)</font><br><br><b>import matplotlib.pyplot as plt</b><br>
+plt.plot(x,y)
+
+<ul><li>線條樣式<br>
+plt.plot(x,y,"-o")<br>
+plt.plot(x,y,"--")<br><br><li>幫每一條線標上名稱<br>
+plt.plot(x,y,label="Hello world!")<br>
+plt.legend()<br><br><li>在座標軸加上名稱<br>
+plt.xlabel("x") <br>
+plt.ylabel("nP(n|N)")<br><br><li>選取圖的顯示範圍<br>
+plt.xlim(0,20)<br>
+plt.ylim(0,1)<br><br><li>設定圖大小<br>
+plt.figure(figsize=(8,4))<br><br><li>顯示圖片<br>
+plt.show()<br><br><li>分割視窗<br>
+plt.subplot()<br><pre style="color: #000000; background: #F5FFE0; border: outset #ccc;font-size: 12pt;"><font color="#8B4726" face="Algerian" size="4">example</font><br>
+假設要畫六張圖，分布為上下兩張圖左右三張圖的排列方式: ( 2 x 3 )<br><table border="1" ><tbody><tr><td>(1)</td><td>(2)</td><td>(3)</td></tr><tr><td>(4)</td><td>(5)</td><td>(6)</td></tr></tbody></table>
+如果要畫第5張圖的位置要輸入<b>plt.subplot(235)</b></pre></ul><font color="#8B4726" face="標楷體" size="5">數列(numpy)</font><br><br><b>import numpy as np</b><br><ul><li>形成零矩陣<br>
+x=np.zeros(5,float)<br><br><li>形成等差數列(差可不為整數)<br>
+x=np.arange(0,1,0.2)<br><br><li>將一個範圍分為分為固定等分<br>
+x=np.linspace(0,10,1000)<br><br></ul><font color="#8B4726" face="標楷體" size="5">隨機(<a href="https://dotblogs.com.tw/chris0920/2010/10/25/18560"STYLE="text-decoration:none"target="_blank">ramdom</a>)</font><br><br><b>import ramdom as rd</b><br><ul><li>產生隨機數<br>
+r=rd.random()<br><br><li>洗牌<br>
+a=range(10)<br>
+rd.shuffle(a)<br><br><li>在(5*5)矩陣中每個位置形成變數<br><b>import numpy.random as npr</b><br>
+r=npr.random((5,5))<br>
+print r,'\n',type(r)<br><br></ul><font color="#8B4726" face="標楷體" size="5">計時(<a href="http://www.runoob.com/python/python-date-time.html"STYLE="text-decoration:none"target="_blank">time</a>)</font><pre style="color: #000000; background: #F5FFE0; border: outset #ccc;font-size: 12pt;"><b>from time import clock,time</b><br>
+tstart=clock()<br>
+要執行的程式碼<br>
+tend=clock()<br>
+print tstart,tend,tend-tstart <br><br></pre>
+這樣的打法跟只用import time的不同在於，我特地呼叫出time函數庫裡的time和clock，因此tstart=clock()那裏就不必特別打成tstart=time.clock()<br><br>
+</body></html>
