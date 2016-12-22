@@ -19,7 +19,7 @@ p.pos_fixed
 <p class="pos_fixed"><a href="#title"><img src="http://comic.qq.com/images/comic/2008/01/02/april/tsj/016.gif"width="43" height="43"></a></p>
 
 <table border=1>
-<td><div id="toc" class="toc"><div id="toctitle"><b>目錄</b></div>
+<td><b>目錄</b>
 <ul>
 <li><a href="#a" STYLE="text-decoration:none">2016/12/02</a>
 <ul><li><a href="#a1" STYLE="text-decoration:none">函式庫的引入與使用</a>
@@ -36,6 +36,7 @@ p.pos_fixed
 <li><a href="#c2" STYLE="text-decoration:none">List使用上的問題</a>
 <li><a href="#c3" STYLE="text-decoration:none">建立自訂方程式(def)</a>
 <li><a href="#c4" STYLE="text-decoration:none">Vpython的使用</a></ul>
+<li><a href="#d" STYLE="text-decoration:none">2016/12/23</a>
 </ul></td></table><br>
 
 
@@ -270,6 +271,28 @@ while 1:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = abs(ball.velocity.y)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = ball.velocity.y - 9.8*dt<br><br>
+</ul>
+
+<div style="text-align:left;background-color:#E0FFFF;padding:5px;margin-bottom:5px;"><h2><a name="d">2016/12/23</a></h2></div>
+
+<ul><li><h3><a name="d1">解一階常微分程式ODE(函式庫: <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint" STYLE="text-decoration:none" target="_blank">scipy.integrate.odeint</a>)</a></h3></li><br>
+
+範例:解&nbsp;&nbsp;-kx=ma<br><br>
+import scipy.integrate as sci<br>
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+m=5 #(kg)<br>
+k=2 #(N/m)<br>
+ic=[0,5] #initial condition=[x0(m),v0(m/s)]<br>
+def fun(In,t):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#x0=In[0],v0=In[1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Out=[In[1],-k*In[0]/m]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#Out=[x',x'']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return Out<br>
+t=np.linspace(0.0,30.0,101) #(second)<br>
+x=sci.odeint(fun,ic,t)<br>
+#sci.odeint(function,intitial condition)<br>
+plt.plot(t,x[:,0])<br><br>
 </ul>
 
 </body>
