@@ -52,7 +52,15 @@ p.pos_fixed
 這個引入函式庫的方式我個人比較不推薦。表示的方式是<br><br>
 「from 函式庫 import *」<br><br>
 範例:from numpy import *<br><br>
-這個指令會自訂幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，相比直接告訴他位置來的慢。</ol><br>
+這個指令會自訂幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，相比直接告訴他位置來的慢。<br><br>
+
+<b>函式庫參考資料:</b>
+<select onchange="window.open(this.options[this.selectedIndex].value)">
+<option>...</option>
+<option value="http://scipy.org/"STYLE="text-decoration:none"target="_blank">SciPy.org</option>
+<option value="http://matplotlib.org/"STYLE="text-decoration:none"target="_blank">matplotlib</option>
+</select>
+</ol>
 
 
 
@@ -237,9 +245,32 @@ plt.plot(t,v,'-o')<br><br>
 Vpython要怎麼用的話基本上就參考<a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">vpython.org</a>這個網站就好，裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。要特別注意的地方是，當你把vpython的視窗關閉的時侯，附圖中的藍色框框會切換成像是開始鈕的綠色三角形。<br>
 <a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15625993_1060731567369545_8664764688851898907_o.jpg?oh=e363bca916f3a6253ee7b97b37c67301&oe=58B17942" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15284085_1061375057305196_6420006542766581879_n.jpg?oh=acaee0c0bbbe68163f8b5f0e06029eef&oe=58B2ADC0"></a><br><br>
 如果要再次執行程式碼的話，只要點下那個三角形，切換成橘色三角形就可以了!<br>
-另外，<a href="http://vpython.org/contents/contributed.html" STYLE="text-decoration:none" target="_blank"><b>這邊</b></a>有其他人做的模型可以提供參考。我昨天上傳的簡單程式碼也能參考看看。如果看了範例後。還是無法會意其中的意思的話在特別提出來吧!<br><br></ul>
-
-
+另外，<a href="http://vpython.org/contents/contributed.html" STYLE="text-decoration:none" target="_blank"><b>這邊</b></a>有其他人做的模型可以提供參考。我昨天上傳的簡單程式碼也能參考看看。如果看了範例後。還是無法會意其中的意思的話在特別提出來吧!<br><br>
+範例程式:<br><br>
+from visual import *<br>
+import random as rd<br>
+floor = box(pos=vector(0,0,0), length=4, height=0.5, width=4, color=color.blue)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為方形、長寬高、顏色<br>
+h=helix(pos=floor.pos+vector(0,0.25,0),axis=vector(0,1,0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為彈簧形狀<br>
+ball = sphere(pos=vector(0,4,0), radius=1, color=color.red)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為圓形、半徑、顏色<br>
+arrow1=arrow(pos=ball.pos+vector(0,ball.radius,0), axis=vector(0,-2,0),color=color.yellow)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為箭頭形狀<br>
+arrow1.pos-=arrow1.axis<br>
+ball.velocity = vector(0,-1,0)<br>
+dt = 0.1<br><br>
+while 1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rate (20) #播放速度，1/20s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ball.pos = ball.pos + ball.velocity*dt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;arrow1.pos=arrow1.pos+ball.velocity*dt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ball.color=[rd.uniform(0.4,1.0), rd.uniform(0.4,1.0), rd.uniform(0.4,1.0)]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;h.axis=ball.pos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if ball.y &lt; ball.radius:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = abs(ball.velocity.y)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = ball.velocity.y - 9.8*dt<br><br>
+</ul>
 
 </body>
 </html>
