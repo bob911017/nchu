@@ -277,22 +277,23 @@ while 1:<br>
 
 <ul><li><h3><a name="d1">解一階常微分程式ODE(函式庫: <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint" STYLE="text-decoration:none" target="_blank">scipy.integrate.odeint</a>)</a></h3></li><br>
 
-範例:解&nbsp;&nbsp;-kx=ma<br><br>
+範例:解&nbsp;&nbsp;-cv-kx=ma，阻尼力+彈力=合力<br><br>
 import scipy.integrate as sci<br>
 import numpy as np<br>
 import matplotlib.pyplot as plt<br>
 m=5 #(kg)<br>
 k=2 #(N/m)<br>
+c=1.5 #(Ns/m)<br>
 ic=[0,5] #initial condition=[x0(m),v0(m/s)]<br>
-def fun(In,t):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;#x0=In[0],v0=In[1]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Out=[In[1],-k*In[0]/m]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;#Out=[x',x'']<br>
-&nbsp;&nbsp;&nbsp;&nbsp;return Out<br>
+<br>
+def fun(input,t):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#x0=input[0],v0=In[1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;out=[input[1],(-c*input[1]-k*input[0])/m]&nbsp; #out=[x',x'']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return out<br>
+<br>
 t=np.linspace(0.0,30.0,101) #(second)<br>
-x=sci.odeint(fun,ic,t)<br>
-#sci.odeint(function,intitial condition)<br>
-plt.plot(t,x[:,0])<br><br>
+x=sci.odeint(fun,ic,t) &nbsp;#sci.odeint(function,intitial condition)<br>
+plt.plot(t,x[:,0])<br>
 </ul>
 
 </body>
