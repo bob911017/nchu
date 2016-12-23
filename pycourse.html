@@ -286,9 +286,9 @@ k=2 #(N/m)<br>
 c=1.5 #(Ns/m)<br>
 ic=[0,5] #initial condition=[x0(m),v0(m/s)]<br>
 <br>
-def fun(input,t):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;#x0=input[0],v0=In[1]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;out=[input[1],(-c*input[1]-k*input[0])/m]&nbsp; #out=[x',x'']<br>
+def fun(inp,t):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#x0=inp[0],v0=inp[1]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;out=[inp[1],(-c*inp[1]-k*inp[0])/m]&nbsp; #out=[x',x'']<br>
 &nbsp;&nbsp;&nbsp;&nbsp;return out<br>
 <br>
 t=np.linspace(0.0,30.0,101) #(second)<br>
