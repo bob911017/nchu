@@ -1,19 +1,20 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>Python 教學日誌</title>
 </head>
 <body>
-<h1><a name="title">Python 教學日誌</a></h1><marquee behavior="alternate">
-<img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-0/s480x480/15590567_1060945094014859_2754799491653003953_n.jpg?oh=95ce9bfb2245f379c5ee288cef69ca2b&oe=58E93A9E"></marquee>
+<h1><a name="title">Python 教學日誌</a></h1>
+<img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-0/s480x480/15590567_1060945094014859_2754799491653003953_n.jpg?oh=95ce9bfb2245f379c5ee288cef69ca2b&oe=58E93A9E">
 <br>
 
 <style>
 p.pos_fixed
 {
 	position:fixed;
-	top:50px;
-	left:5px;
+	bottom:5px;
+	right:5px;
 }
 </style>
 <p class="pos_fixed"><a href="#title"><img src="http://comic.qq.com/images/comic/2008/01/02/april/tsj/016.gif"width="43" height="43"></a></p>
@@ -21,6 +22,9 @@ p.pos_fixed
 <table border=1>
 <td><b>目錄</b>
 <ul>
+<li><a href="#z" STYLE="text-decoration:none">簡介</a>
+<ul><li><a href="#z1" STYLE="text-decoration:none">基礎概念</a>
+<li><a href="#z2" STYLE="text-decoration:none">常見運算符號</a></ul>
 <li><a href="#a" STYLE="text-decoration:none">2016/12/02</a>
 <ul><li><a href="#a1" STYLE="text-decoration:none">函式庫的引入與使用</a>
 <li><a href="#a2" STYLE="text-decoration:none">資料的類型(Type)</a>
@@ -38,6 +42,56 @@ p.pos_fixed
 <li><a href="#c4" STYLE="text-decoration:none">Vpython的使用</a></ul>
 <li><a href="#d" STYLE="text-decoration:none">2016/12/23</a>
 </ul></td></table><br>
+
+<div style="text-align:left;background-color:#BEBEBE;padding:5px;margin-bottom:5px;"><h2><a name="z">簡介</a></h2></div>
+<ul>
+<li><h3><a name='z1'>基礎概念</a></h3></li>
+<ul><h4><li>概念一</li></h4>
+程式在運行的時候，基本上就是進行數學的運算，因此想要利用變數來協助編寫程式碼的時候，需要指定一個數值給變數。指定的方式就是利用「=」這個符號。範例如下<br><br>
+a=2<br><br>
+範例代表的意思即「把2這個值指定給a這個變數」。另一方面，可以利用另一個變數來與這個變數a做連結，例如b=a。此時b和a會被程式視作一體的，當b的數值更動時就會影響a，反之亦然。
+<h4><li>概念二</li></h4>
+利用概念一，可以衍伸出類似加減乘除的計算方式。範例如下<br><br>
+<font color='#0066CC'><b>a</b></font>=a+3<br><br>
+意思是「a+3得到的值指定給<font color='#0066CC'><b>a</b></font>這個變數」。也就是說，假如原本a的值為2，那麼加上3之後就會得到5。程式把5這個值指定給<font color='#0066CC'><b>a</b></font>這個變數。
+</ul>
+
+<li><h3><a name='z2'>常見特殊運算符號</a></h3></li>
+<table  width="300"border=1>
+<td><b></b></td>
+<td><b>符號形式</b></td>
+<td><b>代表意義</b></td><tr>
+<td rowspan=8 align=center>算數</td>
+<td>a+b</td>
+<td>a加b</td><tr>
+<td>a-b</td>
+<td>a減b</td><tr>
+<td>a*b</td>
+<td>a乘b</td><tr>
+<td>a/b</td>
+<td>a除b</td><tr>
+<td>a**b</td>
+<td>a<sup>b</sup></td><tr>
+<td>a%b</td>
+<td>a除b的餘數</td><tr>
+<td>a//b</td>
+<td>a除b的商</td><tr>
+<td>a+=b</td>
+<td>a=a+b</td><tr>
+<td rowspan=4 align=center>比較</td>
+<td>a==b</td>
+<td>比較a和b是否相等</td><tr>
+<td>a!=b</td>
+<td>比較a和b是否不相等</td><tr>
+<td>a>b</td>
+<td>比較a是否大於b</td><tr>
+<td>a>=b</td>
+<td>比較a是否大於等於b</td><tr>
+<td rowspan=1 align=center>字串</td>
+<td>'\n'</td>
+<td>換行</td><tr>
+</table>
+</ul>
 
 
 <div style="text-align:left;background-color:#FFE4E1;padding:5px;margin-bottom:5px;"><h2><a name="a">2016/12/02</a></h2></div>
@@ -58,8 +112,8 @@ p.pos_fixed
 <b>函式庫參考資料:</b>
 <select onchange="window.open(this.options[this.selectedIndex].value)">
 <option>...</option>
-<option value="http://scipy.org/"STYLE="text-decoration:none"target="_blank">SciPy.org</option>
-<option value="http://matplotlib.org/"STYLE="text-decoration:none"target="_blank">matplotlib</option>
+<option value="http://scipy.org/"target="_blank">SciPy.org</option>
+<option value="http://matplotlib.org/"target="_blank">matplotlib</option>
 </select>
 </ol>
 
