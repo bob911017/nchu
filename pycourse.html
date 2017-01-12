@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +43,8 @@ p.pos_fixed
 <li><a href="#c3" STYLE="text-decoration:none">建立自訂方程式(def)</a>
 <li><a href="#c4" STYLE="text-decoration:none">Vpython的使用</a></ul>
 <li><a href="#d" STYLE="text-decoration:none">2016/12/23</a>
+<ul><li><a href="#d1" STYLE="text-decoration:none">矩陣</a>
+<li><a href="#d2" STYLE="text-decoration:none">解常微分程式ODE</a></ul>
 </ul></td></table><br>
 
 <div style="text-align:left;background-color:#BEBEBE;padding:5px;margin-bottom:5px;"><h2><a name="z">簡介</a></h2></div>
@@ -330,7 +333,35 @@ while 1:<br>
 
 <div style="text-align:left;background-color:#E0FFFF;padding:5px;margin-bottom:5px;"><h2><a name="d">2016/12/23</a></h2></div>
 
-<ul><li><h3><a name="d1">解常微分程式ODE(函式庫: <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint" STYLE="text-decoration:none" target="_blank">scipy.integrate.odeint</a>)</a></h3></li><br>
+<ul><li><h3><a name="d1">矩陣</a></h3></li>
+<ul><li><h4>矩陣運算</h4></li>
+矩陣的運算有兩種指令來運算，一種是把直接建立矩陣來運算，範例如下<br><br>
+import numpy as np<br>
+a=np.matrix([[1,2],[3,4]])<br>
+b=np.matrix([[1,2],[3,4]])<br>
+c=a*b<br>
+print c<br><br>
+另一種方式是建立一個array後再用dot的指令進行矩陣運算。範例如下<br><br>
+import numpy as np<br>
+x=np.array([[1,2],[3,4]])<br>
+y=np.array([[1,2],[3,4]])<br>
+z1=x*y<br>
+z2=np.dot(x,y)<br>
+print 'z1='<br>
+print z1<br>
+print 'z2='<br>
+print z2<br><br>
+
+由範例的結果z1和z2我們可以觀察到，前者不使用dot的指令進行相乘的話，僅只有對應位置的元素相乘，而非我們所理解的矩陣乘法。當如後者使用dot的指令進行運算的話則為一般的矩陣運算。
+
+<li><h4>其他矩陣相關運算(<a href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html" STYLE="text-decoration:none" target="_blank">Linear algebra</a>)</h4></li>
+取行列式值<br>
+np.linalg.det(a)<br><br>
+取反矩陣<br>
+np.linalg.inv(a)<br><br>
+</ul>
+
+<li><h3><a name="d2">解常微分程式ODE(函式庫: <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint" STYLE="text-decoration:none" target="_blank">scipy.integrate.odeint</a>)</a></h3></li><br>
 
 範例:解&nbsp;&nbsp;-cv-kx=ma，阻尼力+彈力=合力<br><br>
 import scipy.integrate as sci<br>
