@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,10 +39,11 @@ p.pos_fixed
 <li><a href="#b4" STYLE="text-decoration:none">使用者輸入(input &amp; raw_input)</a>
 <li><a href="#b5" STYLE="text-decoration:none">畫圖(matplotlib)</a></ul>
 <li><a href="#c" STYLE="text-decoration:none">2016/12/16</a>
-<ul><li><a href="#c1" STYLE="text-decoration:none">List和Array的使用差異</a>
-<li><a href="#c2" STYLE="text-decoration:none">List使用上的問題</a>
-<li><a href="#c3" STYLE="text-decoration:none">建立自訂方程式(def)</a>
-<li><a href="#c4" STYLE="text-decoration:none">Vpython的使用</a></ul>
+<ul><li><a href="#c1" STYLE="text-decoration:none">數列的基本操作</a>
+<li><a href="#c2" STYLE="text-decoration:none">List和Array的使用差異</a>
+<li><a href="#c3" STYLE="text-decoration:none">List使用上的問題</a>
+<li><a href="#c4" STYLE="text-decoration:none">建立自訂方程式(def)</a>
+<li><a href="#c5" STYLE="text-decoration:none">Vpython的使用</a></ul>
 <li><a href="#d" STYLE="text-decoration:none">2016/12/23</a>
 <ul><li><a href="#d1" STYLE="text-decoration:none">矩陣</a>
 <li><a href="#d2" STYLE="text-decoration:none">解常微分程式ODE</a></ul>
@@ -101,14 +103,14 @@ a=2<br><br>
 <div style="text-align:left;background-color:#FFE4E1;padding:5px;margin-bottom:5px;"><h2><a name="a">2016/12/02</a></h2></div>
 <ul>
 <li><h3><a name="a1">函式庫的引入與使用</a></h3></li>
-函式庫包含了各種數學的運算或是繪圖等不同的功能，但是也不要因為偷懶就把所有可能用到的函式庫都載入，這樣會造成程式的負擔，執行速度會減慢，善用別已有的函式庫對寫程式是很有幫助的。
+函式庫包含了各種數學的運算或是繪圖等不同的功能，但是也不要因為偷懶就把所有可能用到的函式庫都載入，這樣會造成程式的負擔，執行速度會減慢，善用已有的函式庫對寫程式是很有幫助的。
 <ol>
 <li><h4>載入函式庫並取代稱</h4></li>
 使用上就是「import 函式庫名稱&nbsp;as&nbsp;代稱」這樣的形式<br><br>
 範例:&nbsp;import&nbsp;numpy&nbsp;as&nbsp;np<br>
-當然覺得取代稱很麻煩也可以直接打import&nbsp;numpy就好。如果我們要引用函式庫numpy中的函式pi的功能的話，只要打np.pi，如果沒有取代稱的話則打numpy.pi，才可以使用。<br>
+例如假設我們要引用函式庫numpy中的函式pi的功能的話，只要打np.pi。當然覺得取代稱很麻煩也可以直接打import&nbsp;numpy就好，此時引入函式的形式就變為numpy.pi。<br>
 <li><h4>第二個引入函式庫的形式</h4></li><br>
-這個引入函式庫的方式我個人比較不推薦。表示的方式是<br><br>
+這個引入函式庫的方式比較偷懶。表示的方式是<br><br>
 「from 函式庫 import *」<br><br>
 範例:from numpy import *<br><br>
 這個指令會自訂幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，相比直接告訴他位置來的慢。<br><br>
@@ -124,27 +126,27 @@ a=2<br><br>
 
 
 <li><h3><a name="a2">資料的類型(Type)</a></h3></li>
-儲存資料有很多種方式，包含數字、數列、字串等等。不同類型的資料通常不能直接做疊加或運算，需要將需要處理的資料轉換成相同的類型，才能一起處理。資料之間的類型轉換方式如int(1.1)，就能把原本是浮點數的1.1轉換成整數形式的1。<br>
-這邊我整理一下你們現在應該會常用的幾種。<br>
+儲存資料有很多種方式，包含數字、數列、字串等等。不同類型的資料通常不能直接做疊加或運算，需要將待處理的資料轉換成相同的類型，才能一起運算。資料之間的類型轉換方式如int(1.1)，就能把原本是浮點數的1.1轉換成整數形式的1。<br>
+以下我整理一下比較常用的幾種type。<br>
 <ol>
 <li><h4>數字</h4></li>
 數字分為int(integer整數)、float(floating-point number浮點數)和complex(complex number複數)。這邊因為複數沒辦法對應相應的實數，所以先主要討論整數和浮點數的部分。<br>
-我以10為例，整數形式int(10)為10，而浮點數形式(10)為10.0，接著以10.6為例，整數形式int(10.6)為10而浮點數float(10.6)為10.6。初學者容易犯的錯就是把兩個整數做運算後，得出的結果並非自己所想的。範例如下:<br><br>
+我以10為例，整數形式int(10)為10，而浮點數形式float(10)為10.0，接著以10.6為例，整數形式int(10.6)為10而浮點數float(10.6)為10.6。初學者容易犯的錯就是把兩個整數做運算後，得出的結果並非自己所想的。範例如下:<br><br>
 程式碼<br>
 print 3/6<br><br>
 顯示為<br>
 0<br><br>
 一般而言雖然我們知道3/6等於0.5，但在這邊程式認知你的運算都是整數的類型，因此他把答案0.5取整數，就是程式所顯示的0了。解決的方法很簡單，只要把運算改成3.0/6或3/6.0或是3.0/6.0就能顯示0.5了。
 <li><h4>數列與矩陣</h4></li>
-可以處理數列的形式分為list和array這兩種，之前用np.arange叫出來的就是array的形式(雖然Type裡寫float64或int64，不過這之後再說)。這兩者都是儲存多個資料的方式，建立list的方法只要打上a=[1,2,3]或是a=range(10)就是一個list了!另一方面，array的話，幾乎用numpy建立出來的數列或矩陣都是這個形式的資料類型。<br>
-<li><h4>字串string</h4></li><br>
+可以處理數列的形式分為list和array這兩種，之前用np.arange叫出來的就是array的形式(雖然Type裡寫float64或int64，不過這之後再說)。這兩者都是儲存多個資料的方式，建立list的方法只要打上a=[0,1,2]或是a=range(3)就是一個list了!另一方面，array的話，幾乎用numpy建立出來的數列或矩陣都是這個形式的資料類型。<br>
+<li><h4>字串string</h4></li>
 字串就是用來儲存文字資料的一種資料形式，使用方法只要在要儲存的文字兩側放上「'」即可，如「'文字'」<br><br>
 範例: print 'hello world!'<br><br>
 </ol>
 
 <li><h3><a name="a1">迴圈</a></h3></li>
-迴圈包含很多種，通常是用在需要重複做某一組指令，或是符合條件才執行指令時使用。而在python裡，迴圈只有開始的指令，沒有end之類的指令給他知道，迴圈要在哪裡跑。因此，他是用4個空白鍵(或是按一下Tab鍵)，來決定你迴圈裡的內容要執行哪幾行。<br>
-這禮拜我只提for迴圈，所以我先打for迴圈就好。<br><br>
+迴圈包含很多種，通常是用在需要重複做某一組指令，或是符合條件才執行指令時使用。而在python裡，迴圈只有開始的指令，沒有end之類的指令讓程式知道迴圈要在哪裡跑。在python裡是用4個空白鍵(或是按一下Tab鍵)，來決定你迴圈裡的內容要執行哪幾行。<br>
+以for迴圈為例<br><br>
 
 for迴圈是拿來執行固定次數的一個迴圈，執行的次數取決於你給的數列的長短。範例如下:<br><br>
 程式碼<br>
@@ -182,7 +184,7 @@ True<br><br>
 
 
 <li><h3><a name="b2">條件語句(if)</a></h3></li>
-條件語句簡單講就假設一些條件，符合條件就執行code，不符合就不執行。設定的條件可以不只一個，以下做個範例<br><br>
+條件語句指的是假設一些條件，符合條件就執行code，不符合就不執行。設定的條件可以不只一個，以下做個範例<br><br>
 程式碼<br>
 a=[1,2,4,5,3,6]<br>
 for i in a:<br>
@@ -199,7 +201,7 @@ for i in a:<br>
 5 other<br>
 3 matches condition2<br>
 6 other<br><br>
-這邊特別注意到其實在a數列中1是同時符合i&lt;2以及i&lt;4的條件，但是這邊程式只顯示符合i&lt;2的結果。這是因為我們設定i&lt;4這個條件是用elif，也就是else if，指的是「不符合前面條件」且「符合elif設定的條件」的時候就執行code，如果前面條件符合的話就不執行，有點類似差集的概念。而如果有要顯示「1 matches condition2」的話，就把elif i&lt;4:改為if i&lt;4:就行了。<br><br>
+這邊特別注意到其實在a數列中1是同時符合i&lt;2以及i&lt;4的條件，但是這邊程式只顯示符合i&lt;2的結果。這是因為我們設定i&lt;4這個條件是用elif，也就是else if，也就是不符合先前條件且符合elif設定的條件的時候就執行code，如果前面條件符合的話就不執行。而如果有要顯示「1 matches condition2」的話，就把elif i&lt;4:改為if i&lt;4:就行了。<br><br>
 
 <li><h3><a name="b3">條件循環(while)</a></h3></li>
 while語句使用上有點像條件語句結合for 迴圈。以下為範例<br><br>
@@ -251,9 +253,25 @@ plt.ylabel('ylabel')<br><br>
 這樣你在括號中打的字串就會出現在圖中的座標軸旁邊了!<br>
 基本上matplot裡面還有很多各式各樣的功能可以美化圖，甚至實現存圖的功能，如果還有哪些想做的畫圖功能就再提吧!我知道就講，不知道就自己Google去吧~<br><br></ul> 
 
+
 <div style="text-align:left;background-color:#FFFACD;padding:5px;margin-bottom:5px;"><h2><a name="c">2016/12/16</a></h2></div>
 <ul>
-<li><h3><a name="c1">List和Array的使用差異</a></h3></li><br>
+<li><h3><a name="c1">數列的基本操作</a></h3></li>
+建立數列的方式有很多種，包含如[0,1,2]、range(3)以及np.arange(3)這幾種方式。<br>
+range只能建立一個以整數形成的等差數列，如range(0,3,1)<br>
+而np.arange使用上較range靈活，可以建立小數形成的數列，如np.arange(0,3,0.5)<br>
+另外，數列中各個元素的位置順序是從0開始計算的，以下為範例:<br><br>
+程式碼<br>
+a=[1,2,3,4]<br>
+print a[0]<br>
+print a[1]<br>
+print a[-1]<br><br>
+輸出為<br>
+1<br>
+2<br>
+4<br><br>
+
+<li><h3><a name="c2">List和Array的使用差異</a></h3></li>
 乘法對於list和array來說有不同的意義。對於list而言，乘法是對自己本身的數列重複幾次的指令，如[1,2,3]這個list去*2的話，就會形成[1,2,3,1,2,3]的list。另一方面，array所形成的數列的乘除法則比較相近於一般認知的乘除，也就是將數列出的每個元素都進行乘除法。以下為範例<br><br>
 程式碼<br>
 import numpy as np<br>
@@ -267,7 +285,7 @@ print 'array='+str(array)<br><br>
 list=[1, 2, 3, 1, 2, 3, 1, 2, 3]<br>
 array=[ 0. 0.9 1.8 2.7 3.6]<br><br>
 
-<li><h3><a name="c2">List使用上的問題</a></h3></li><br>
+<li><h3><a name="c3">List使用上的問題</a></h3></li>
 這東西有點不太好說明。基本上算是程式本身設計上的一些缺陷，但python同時也有提供相應的解決方法，所以倒也不是什麼大問題。以下為範例<br><br>
 程式碼<br>
 a=[1,2,3]<br>
@@ -287,7 +305,7 @@ c=[1, 6, 3]<br><br>
 如果再編寫程式碼的時候，直接將b=a的話，python會把b和a連結為相同的東西，因此在第四行，我將b的第1個元素更換為5的時候，a的第一個元素也會被跟著替換掉。<br>
 因此，當你想要複製a的資料，但不希望在更動複製的資料時，變更a的資料時，可以使用像c=a[:]這樣的方法來複製。<br><br>
 
-<li><h3><a name="c3">建立自訂方程式(def)</a></h3></li><br>
+<li><h3><a name="c4">建立自訂方程式(def)</a></h3></li>
 自訂方程式其實算是滿好用的一個指令，如果在程式碼中有一很常用到的計算式的話，就能利用def讓整個程式碼看起來更簡潔。以下為範例<br><br>
 <br>
 import matplotlib.pyplot as plt<br>
@@ -298,10 +316,14 @@ def velocity(x1,x2):<br>
 t=np.arange(0.0,10.0,0.2)<br>
 v=velocity(9.8,t)<br>
 plt.plot(t,v,'-o')<br><br>
-輸出的結果會是一張v=at的圖，這邊我稍微講解一下define的使用。方程式的話，一般較熟悉的莫過於f(x)=y，意思就是給定(input)一個值x，經過f()這個方程式轉換後，形成一個y的值。上面範例中v=velocity(9.8,t)的意思就是「將9.8和t分別代入velocity(x1,x2)中的x1和x2，接著經過方程式中的y=x1*x2計算後得出一個y值，再來就是把這個得出的y值回傳給v=velocity(9.8,t)這條方程式中的v」<br><br>
+輸出的結果會是一張v=at的圖，這邊我稍微講解一下define的使用。方程式的話，一般較熟悉的莫過於f(x)=y，意思就是給定(input)一個值x，經過f()這個方程式轉換後，形成一個y的值。<br>
+上面範例中v=velocity(9.8,t)進行的動作包含
+<ol><li>將9.8和t分別代入velocity(x1,x2)中的x1和x2，
+<li>經過方程式中的y=x1*x2計算後得出一個y值
+<li>把計算後得出的y值回傳給v=velocity(9.8,t)這條方程式中的v</ol><br><br>
 
-<li><h3><a name="c4">Vpython的使用</a></h3></li><br>
-Vpython要怎麼用的話基本上就參考<a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">vpython.org</a>這個網站就好，裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。要特別注意的地方是，當你把vpython的視窗關閉的時侯，附圖中的藍色框框會切換成像是開始鈕的綠色三角形。<br>
+<li><h3><a name="c5">Vpython的使用</a></h3></li>
+Vpython要怎麼用的話基本上就參考<b><a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">vpython.org</a></b>這個網站就好，裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。要特別注意的地方是，當你把vpython的視窗關閉的時侯，附圖中的藍色框框會切換成像是開始鈕的綠色三角形。<br>
 <a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15625993_1060731567369545_8664764688851898907_o.jpg?oh=e363bca916f3a6253ee7b97b37c67301&oe=58B17942" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15284085_1061375057305196_6420006542766581879_n.jpg?oh=acaee0c0bbbe68163f8b5f0e06029eef&oe=58B2ADC0"></a><br><br>
 如果要再次執行程式碼的話，只要點下那個三角形，切換成橘色三角形就可以了!<br>
 另外，<a href="http://vpython.org/contents/contributed.html" STYLE="text-decoration:none" target="_blank"><b>這邊</b></a>有其他人做的模型可以提供參考。我昨天上傳的簡單程式碼也能參考看看。如果看了範例後。還是無法會意其中的意思的話在特別提出來吧!<br><br>
