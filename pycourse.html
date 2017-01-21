@@ -199,7 +199,7 @@ for i in a:<br>
 5 other<br>
 3 matches condition2<br>
 6 other<br><br>
-這邊特別注意到其實在a數列中1是同時符合i&lt;2以及i&lt;4的條件，但是這邊程式只顯示符合i&lt;2的結果。這是因為我們設定i&lt;4這個條件是用elif，也就是else if，也就是不符合前面條件且符合elif設定的條件的時候就執行code，如果前面條件符合的話就不執行，有點類似差集的概念。而如果有要顯示「1 matches condition2」的話，就把elif i&lt;4:改為if i&lt;4:就行了。<br><br>
+這邊特別注意到其實在a數列中1是同時符合i&lt;2以及i&lt;4的條件，但是這邊程式只顯示符合i&lt;2的結果。這是因為我們設定i&lt;4這個條件是用elif，也就是else if，指的是「不符合前面條件」且「符合elif設定的條件」的時候就執行code，如果前面條件符合的話就不執行，有點類似差集的概念。而如果有要顯示「1 matches condition2」的話，就把elif i&lt;4:改為if i&lt;4:就行了。<br><br>
 
 <li><h3><a name="b3">條件循環(while)</a></h3></li>
 while語句使用上有點像條件語句結合for 迴圈。以下為範例<br><br>
