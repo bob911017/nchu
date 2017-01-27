@@ -1,14 +1,11 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Python 教學日誌</title>
+<title>Python</title>
 </head>
 <link rel="icon" href="http://anohito.tw/poi/images/POI_01_B.png" type="image/x-icon">
 <body>
-<h1><a name="title">Python 教學日誌</a></h1>
+<h1><a name="title">Python</a></h1>
 <img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-0/s480x480/15590567_1060945094014859_2754799491653003953_n.jpg?oh=95ce9bfb2245f379c5ee288cef69ca2b&oe=58E93A9E">
 <br>
 
@@ -25,44 +22,78 @@ p.pos_fixed
 <table border=1>
 <td><b>目錄</b>
 <ul>
-<li><a href="#z" STYLE="text-decoration:none">簡介</a>
-<ul><li><a href="#z1" STYLE="text-decoration:none">基礎概念</a>
-<li><a href="#z2" STYLE="text-decoration:none">常見運算符號</a></ul>
-<li><a href="#a" STYLE="text-decoration:none">2016/12/02</a>
-<ul><li><a href="#a1" STYLE="text-decoration:none">函式庫的引入與使用</a>
+<li><a href="#a" STYLE="text-decoration:none">簡介</a>
+<ul><li><a href="#a1" STYLE="text-decoration:none">基礎概念</a>
 <li><a href="#a2" STYLE="text-decoration:none">資料的類型(Type)</a>
-<li><a href="#a3" STYLE="text-decoration:none">迴圈</a></ul>
-<li><a href="#b" STYLE="text-decoration:none">2016/12/09</a>
-<ul><li><a href="#b1" STYLE="text-decoration:none">判斷條件(True or False)</a>
-<li><a href="#b2" STYLE="text-decoration:none">條件語句(if)</a>
-<li><a href="#b3" STYLE="text-decoration:none">條件循環(while)</a>
-<li><a href="#b4" STYLE="text-decoration:none">使用者輸入(input &amp; raw_input)</a>
-<li><a href="#b5" STYLE="text-decoration:none">畫圖(matplotlib)</a></ul>
-<li><a href="#c" STYLE="text-decoration:none">2016/12/16</a>
-<ul><li><a href="#c1" STYLE="text-decoration:none">數列的基本操作</a>
+<li><a href="#a3" STYLE="text-decoration:none">判斷條件(True or False)</a>
+<li><a href="#a4" STYLE="text-decoration:none">常見特殊運算符號</a></ul>
+<li><a href="#b" STYLE="text-decoration:none">函式(function)</a>
+<ul><li><a href="#b1" STYLE="text-decoration:none">建立函式(def)</a>
+<li><a href="#b2" STYLE="text-decoration:none">函式庫的引入與使用</a></ul>
+<li><a href="#c" STYLE="text-decoration:none">數列</a>
+<ul><li><a href="#c1" STYLE="text-decoration:none">基本操作</a>
 <li><a href="#c2" STYLE="text-decoration:none">List和Array的使用差異</a>
-<li><a href="#c3" STYLE="text-decoration:none">List使用上的問題</a>
-<li><a href="#c4" STYLE="text-decoration:none">建立自訂方程式(def)</a>
-<li><a href="#c5" STYLE="text-decoration:none">Vpython的使用</a></ul>
-<li><a href="#d" STYLE="text-decoration:none">2016/12/23</a>
-<ul><li><a href="#d1" STYLE="text-decoration:none">矩陣</a>
-<li><a href="#d2" STYLE="text-decoration:none">解常微分程式ODE</a></ul>
+<li><a href="#c3" STYLE="text-decoration:none">List使用上的問題</a></ul>
+<li><a href="#d" STYLE="text-decoration:none">陳述(Statement)</a>
+<ul><li><a href="#d1" STYLE="text-decoration:none">for迴圈</a>
+<li><a href="#d2" STYLE="text-decoration:none">條件語句(if)</a>
+<li><a href="#d3" STYLE="text-decoration:none">條件循環(while)</a></ul>
+<li><a href="#e" STYLE="text-decoration:none">數學運算</a>
+<ul><li><a href="#e1" STYLE="text-decoration:none">矩陣</a>
+<li><a href="#e2" STYLE="text-decoration:none">解常微分程式ODE</a></ul>
+<li><a href="#f" STYLE="text-decoration:none">作圖與動畫</a>
+<ul><li><a href="#f1" STYLE="text-decoration:none">靜圖</a>
+<li><a href="#f2" STYLE="text-decoration:none">動畫(Vpython的使用)</a></ul>
 </ul></td></table><br>
 
-<div style="text-align:left;background-color:#BEBEBE;padding:5px;margin-bottom:5px;"><h2><a name="z">簡介</a></h2></div>
+
+<div style="text-align:left;background-color:#FFE4E1;padding:5px;margin-bottom:5px;"><h2><a name="a">簡介</a></h2></div>
 <ul>
-<li><h3><a name='z1'>基礎概念</a></h3></li>
+<li><h3><a name='a1'>基礎概念</a></h3></li>
 <ul><h4><li>概念一</li></h4>
-程式在運行的時候，基本上就是進行數學的運算，因此想要利用變數來協助編寫程式碼的時候，需要指定一個數值給變數。指定的方式就是利用「=」這個符號。範例如下<br><br>
+程式在運行的時候，進行的是數學上的運算，因此想要利用變數來協助編寫程式碼的時候，需要指定一個數值給變數。指定的方式就是利用「=」這個符號。範例如下<br><br>
 a=2<br><br>
-範例代表的意思即「把2這個值指定給a這個變數」。另一方面，可以利用另一個變數來與這個變數a做連結，例如b=a。此時b和a會被程式視作一體的，當b的數值更動時就會影響a，反之亦然。
+範例代表的意思即「<b>把2這個值指定給a這個變數</b>」。另一方面，可以利用另一個變數來與這個變數a做連結，例如b=a。此時b和a會被程式視作一體的，當b的數值更動時就會影響a，反之亦然。
 <h4><li>概念二</li></h4>
 利用概念一，可以衍伸出類似加減乘除的計算方式。範例如下<br><br>
-<font color='#0066CC'><b>a</b></font>=a+3<br><br>
-意思是「a+3得到的值指定給<font color='#0066CC'><b>a</b></font>這個變數」。也就是說，假如原本a的值為2，那麼加上3之後就會得到5。程式把5這個值指定給<font color='#0066CC'><b>a</b></font>這個變數。
+<font color='#0066CC'>a</font>=a+3<br><br>
+意思是「<b>a+3得到的值指定給<font color='#0066CC'>a</font>這個變數</b>」。也就是說，假如原本a的值為2，那麼加上3之後就會得到5。程式把5這個值指定給<font color='#0066CC'>a</font>這個變數。
 </ul>
+<br>
+<li><h3><a name="a2">資料的類型(Type)</a></h3></li>
+儲存資料有很多種方式，包含數字、數列、字串等等。不同類型的資料通常不能直接做疊加或運算，需要將待處理的資料轉換成相同的類型，才能一起運算。資料之間的類型轉換方式如int(1.1)，就能把原本是浮點數的1.1轉換成整數形式的1。<br>
+以下我整理一下比較常用的幾種type。<br>
+<ol>
+<li><h4>數字</h4></li>
+數字分為int(integer整數)、float(floating-point number浮點數)和complex(complex number複數)。這邊因為複數沒辦法對應相應的實數，所以先主要討論整數和浮點數的部分。<br>
+我以10為例，整數形式int(10)為10，而浮點數形式float(10)為10.0，接著以10.6為例，整數形式int(10.6)為10而浮點數float(10.6)為10.6。初學者容易犯的錯就是把兩個整數做運算後，得出的結果並非自己所想的。範例如下:<br><br>
+程式碼<br>
+print 3/6<br><br>
+顯示為<br>
+0<br><br>
+一般而言雖然我們知道3/6等於0.5，但在這邊程式認知你的運算都是整數的類型，因此他把答案0.5取整數，就是程式所顯示的0了。解決的方法很簡單，只要把運算改成3.0/6或3/6.0或是3.0/6.0就能顯示0.5了。
+<li><h4>數列與矩陣</h4></li>
+可以處理數列的形式分為list和array這兩種，之前用np.arange叫出來的就是array的形式(雖然Type裡寫float64或int64，不過這之後再說)。這兩者都是儲存多個資料的方式，建立list的方法只要打上a=[0,1,2]或是a=range(3)就是一個list了!另一方面，array的話，幾乎用numpy建立出來的數列或矩陣都是這個形式的資料類型。<br>
+<li><h4>字串string</h4></li>
+字串就是用來儲存文字資料的一種資料形式，使用方法只要在要儲存的文字兩側放上「'」即可，如「'文字'」<br><br>
+範例: print 'hello world!'<br><br>
+</ol>
+</ul>
+<ul><li><h3><a name="a3">判斷條件(True or False)</a></h3></li>
+判斷條件是通過判斷一個或多個語句的結果為True或False，來決定執行的程式碼。判斷式中大概包含等於(==)、不等於(!=)、大於(>)、小於(&lt;)和大於等於(&gt;=)等種類。<br>
+當符合判斷式條件的時候，Python會給出True的回應，反之則為False。大家可以用以下程式碼進行嘗試<br><br>
+程式碼<br>
+print 1==1<br>
+print 1!=1<br><br>
+輸出為<br>
+True<br>
+False<br><br>
+另外如果有多個條件的話，則可以使用聯集(or)或是交集(and)的概念，範例如下<br><br>
+print 1==1 or 1!=1<br><br>
+結果為<br>
+True<br><br>
 
-<li><h3><a name='z2'>常見特殊運算符號</a></h3></li>
+<li><h3><a name='a4'>常見特殊運算符號</a></h3></li>
 <table  width="300"border=1>
 <td><b></b></td>
 <td><b>符號形式</b></td>
@@ -100,163 +131,47 @@ a=2<br><br>
 </ul>
 
 
-<div style="text-align:left;background-color:#FFE4E1;padding:5px;margin-bottom:5px;"><h2><a name="a">2016/12/02</a></h2></div>
+<div style="text-align:left;background-color:#FFEFD5;padding:5px;margin-bottom:5px;"><h2><a name="b">函式(function)</a></h2></div>
 <ul>
-<li><h3><a name="a1">函式庫的引入與使用</a></h3></li>
-函式庫包含了各種數學的運算或是繪圖等不同的功能，但是也不要因為偷懶就把所有可能用到的函式庫都載入，這樣會造成程式的負擔，執行速度會減慢，善用已有的函式庫對寫程式是很有幫助的。
+<li><h3><a name="b1">建立函式(def)</a></h3></li>
+建立函式算是滿好用的一個指令，如果在程式碼中有一很常用到的計算式的話，就能利用def讓整個程式碼看起來更簡潔。以下為範例<br><br>
+
+import matplotlib.pyplot as plt<br>
+import numpy as np<br>
+#建立函式<br>
+def velocity(x1,x2):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y=x1*x2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return y<br><br>
+t=np.arange(0.0,10.0,0.2)<br>
+v=velocity(9.8,t)<br>
+plt.plot(t,v,'-o')<br><br>
+輸出的結果會是一張v=at的圖。函式較熟悉的形式莫過於f(x)=y，意思就是給定(input)一個值x，經過f()這個方程式轉換後，形成一個y的值。<br>
+上面範例中v=velocity(9.8,t)進行的動作包含
+<ol><li>將9.8和t分別代入velocity(x1,x2)中的x1和x2，
+<li>經過方程式中的y=x1*x2計算後得出一個y值
+<li>把計算後得出的y值回傳給v=velocity(9.8,t)這條方程式中的v</ol><br><br>
+
+<li><h3><a name="b2">函式庫的引入與使用</a></h3></li>
+在python的世界裡，已經有許多人編寫好的函式可供引入並使用，如<a href='http://scipy.org/'STYLE="text-decoration:none" target="_blank"><b>SciPy.org</b></a>這裡面提供的，其中包含各種數學運算或繪圖等不同的功能。以下就來說明如何使用
 <ol>
 <li><h4>載入函式庫並取代稱</h4></li>
-使用上就是「import 函式庫名稱&nbsp;as&nbsp;代稱」這樣的形式<br><br>
-範例:&nbsp;import&nbsp;numpy&nbsp;as&nbsp;np<br>
-例如假設我們要引用函式庫numpy中的函式pi的功能的話，只要打np.pi。當然覺得取代稱很麻煩也可以直接打import&nbsp;numpy就好，此時引入函式的形式就變為numpy.pi。<br>
+使用的方式為「import 函式庫名稱&nbsp;as&nbsp;代稱」這樣的形式<br><br>
+範例:<br>&nbsp;import&nbsp;numpy&nbsp;as&nbsp;np<br><br>
+打上如上列式子的程式碼後，就完成引入函式庫的動作了。此時當我們要引用函式庫numpy中的函式pi的功能時，只要打np.pi。當然覺得取代稱很麻煩也可以直接打import&nbsp;numpy就好，而引入函式的形式就變為numpy.pi。<br>
 <li><h4>第二個引入函式庫的形式</h4></li><br>
 這個引入函式庫的方式比較偷懶。表示的方式是<br><br>
 「from 函式庫 import *」<br><br>
 範例:from numpy import *<br><br>
-這個指令會自訂幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，相比直接告訴他位置來的慢。<br><br>
+這個指令會自訂幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，程式執行的速度相比直接告訴他位置會來的慢。<br><br>
 
-<b>函式庫參考資料:</b>
-<select onchange="window.open(this.options[this.selectedIndex].value)">
-<option>...</option>
-<option value="http://scipy.org/"target="_blank">SciPy.org</option>
-<option value="http://matplotlib.org/"target="_blank">matplotlib</option>
-</select>
-</ol>
-
-
-
-<li><h3><a name="a2">資料的類型(Type)</a></h3></li>
-儲存資料有很多種方式，包含數字、數列、字串等等。不同類型的資料通常不能直接做疊加或運算，需要將待處理的資料轉換成相同的類型，才能一起運算。資料之間的類型轉換方式如int(1.1)，就能把原本是浮點數的1.1轉換成整數形式的1。<br>
-以下我整理一下比較常用的幾種type。<br>
-<ol>
-<li><h4>數字</h4></li>
-數字分為int(integer整數)、float(floating-point number浮點數)和complex(complex number複數)。這邊因為複數沒辦法對應相應的實數，所以先主要討論整數和浮點數的部分。<br>
-我以10為例，整數形式int(10)為10，而浮點數形式float(10)為10.0，接著以10.6為例，整數形式int(10.6)為10而浮點數float(10.6)為10.6。初學者容易犯的錯就是把兩個整數做運算後，得出的結果並非自己所想的。範例如下:<br><br>
-程式碼<br>
-print 3/6<br><br>
-顯示為<br>
-0<br><br>
-一般而言雖然我們知道3/6等於0.5，但在這邊程式認知你的運算都是整數的類型，因此他把答案0.5取整數，就是程式所顯示的0了。解決的方法很簡單，只要把運算改成3.0/6或3/6.0或是3.0/6.0就能顯示0.5了。
-<li><h4>數列與矩陣</h4></li>
-可以處理數列的形式分為list和array這兩種，之前用np.arange叫出來的就是array的形式(雖然Type裡寫float64或int64，不過這之後再說)。這兩者都是儲存多個資料的方式，建立list的方法只要打上a=[0,1,2]或是a=range(3)就是一個list了!另一方面，array的話，幾乎用numpy建立出來的數列或矩陣都是這個形式的資料類型。<br>
-<li><h4>字串string</h4></li>
-字串就是用來儲存文字資料的一種資料形式，使用方法只要在要儲存的文字兩側放上「'」即可，如「'文字'」<br><br>
-範例: print 'hello world!'<br><br>
-</ol>
-
-<li><h3><a name="a1">迴圈</a></h3></li>
-迴圈包含很多種，通常是用在需要重複做某一組指令，或是符合條件才執行指令時使用。而在python裡，迴圈只有開始的指令，沒有end之類的指令讓程式知道迴圈要在哪裡跑。在python裡是用4個空白鍵(或是按一下Tab鍵)，來決定你迴圈裡的內容要執行哪幾行。<br>
-以for迴圈為例<br><br>
-
-for迴圈是拿來執行固定次數的一個迴圈，執行的次數取決於你給的數列的長短。範例如下:<br><br>
-程式碼<br>
-a=[1,3,5,7,9]<br>
-for i in a:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;print i<br>
-&nbsp;&nbsp;&nbsp;&nbsp;print 'next'<br><br>
-輸出為<br>
-1<br>
-next<br>
-3<br>
-next<br>
-5<br>
-next<br>
-7<br>
-next<br>
-9<br>
-next<br>
+	</ol>
 </ul>
 
-<div style="text-align:left;background-color:#FFEFD5;padding:5px;margin-bottom:5px;"><h2><a name="b">2016/12/09</a></h2></div>
-<ul><li><h3><a name="b1">判斷條件(True or False)</a></h3></li>
-判斷條件是通過判斷一個或多個語句的結果為True或False，來決定執行的程式碼。判斷式中大概包含等於(==)、不等於(!=)、大於(>)、小於(&lt;)和大於等於(&gt;=)等種類。<br>
-當符合判斷式條件的時候，Python會給出True的回應，反之則為False。大家可以用以下程式碼進行嘗試<br><br>
-程式碼<br>
-print 1==1<br>
-print 1!=1<br><br>
-輸出為<br>
-True<br>
-False<br><br>
-另外如果有多個條件的話，則可以使用聯集(or)或是交集(and)的概念，範例如下<br><br>
-print 1==1 or 1!=1<br><br>
-結果為<br>
-True<br><br>
 
 
-<li><h3><a name="b2">條件語句(if)</a></h3></li>
-條件語句指的是假設一些條件，符合條件就執行code，不符合就不執行。設定的條件可以不只一個，以下做個範例<br><br>
-程式碼<br>
-a=[1,2,4,5,3,6]<br>
-for i in a:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if i&lt;2:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print str(i)+' matches condition1'<br>
-&nbsp;&nbsp;&nbsp;&nbsp;elif i&lt;4:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print str(i)+' matches condition2'<br>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print str(i) +' other'<br><br>
-輸出為<br>
-1 matches condition1<br>
-2 matches condition2<br>
-4 other<br>
-5 other<br>
-3 matches condition2<br>
-6 other<br><br>
-這邊特別注意到其實在a數列中1是同時符合i&lt;2以及i&lt;4的條件，但是這邊程式只顯示符合i&lt;2的結果。這是因為我們設定i&lt;4這個條件是用elif，也就是else if，也就是不符合先前條件且符合elif設定的條件的時候就執行code，如果前面條件符合的話就不執行。而如果有要顯示「1 matches condition2」的話，就把elif i&lt;4:改為if i&lt;4:就行了。<br><br>
-
-<li><h3><a name="b3">條件循環(while)</a></h3></li>
-while語句使用上有點像條件語句結合for 迴圈。以下為範例<br><br>
-程式碼<br>
-i=0<br>
-while i&lt;3:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;print i<br>
-&nbsp;&nbsp;&nbsp;&nbsp;i=i+1 <br><br>
-輸出為<br>
-0<br>
-1<br>
-2<br><br>
-這組code表示的是當條件i&lt;3符合的時候，就執行print 和i=i+1，一直執行到條件不符合i&lt;3的時候就跳出while之外。<br><br>
-
-<li><h3><a name="b4">使用者輸入(input &amp; raw_input)</a></h3></li>
-如果要編輯應用程式的話，不必免會要求使用者輸入一些指令，來執行code。這邊就輪到使用input的指令了。範例如下<br><br>
-程式碼<br>
-a=input('type anything: ')<br>
-print a,type(a)<br>
-使用方法及結果如圖<br>
-<a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15440344_1053675074741861_8285242432193006478_o.jpg?oh=d926bf1d665f8a1ceb3ae0a7ea28346a&oe=58F1A9AC" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15590177_1061359727306729_1717516064027129104_n.jpg?oh=82705140cc471df6994b3f49433fd4aa&oe=58F5F64A"></a><br><br>
-點擊綠色框框的區塊，你就能給a一個數值(int, float...)或是字串(string)了<br>
-另一方面，使用指令raw_input的話，不管輸入的東西是哪一種，他都會將這些東西轉成字串。範例如下<br><br>
-程式碼<br>
-a=raw_input('type anything: ')<br>
-print a,type(a)<br>
-輸入<br> 
-4<br>
-輸出為<br>
-4 &lt;type 'str'&gt;<br><br>
-
-<li><h3><a name="b5">畫圖</a>(<a href="http://matplotlib.org/gallery.html" STYLE="text-decoration:none" target="_blank">matplotlib</a>)</h3></li>
-這邊我主要介紹一些基本的畫圖法<br>
-首先引入一個函式庫<br><br>
-import matplotlib.pyplot as plt<br><br>
-接著如果要畫一個2D圖的話，我們需要先建立兩個長度相同的數列，如<br><br>
-x=[1,2,3,4]<br>
-y=[4,5,2,3]<br><br>
-這兩個數列代表著2D圖上的每一個x座標與y座標，跟excel畫圖有類似。畫圖方式如下<br><br>
-plt.plot(x,y,'-o',label="note")<br>
-plt.legend()<br><br>
-呈現的結果如附圖<br>
-<a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15325167_1053695844739784_8440714542392929066_o.jpg?oh=92e43eb38688346c58e403eaf110273b&oe=58E6A2BC" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-0/s261x260/15492454_1061363830639652_2374596060463853049_n.jpg?oh=e640a24ce33150f3b5a9163f0be0dc84&oe=58F11061"></a><br><br>
-第一條指令裡的第一和第二個元素代表x座標與y座標，第三個元素代表畫線的方式是用圓圈標示點並用線相連，第四個元素代表這條線的標籤(圖中右上角那個框框中的東西)。
-而為了要在圖中建立右上角那個框框，我們需要使用第二條指令來建立
-接著如果需要為座標軸標上單位的話，可以使用以下指令<br><br>
-plt.xlabel('xlabel')<br>
-plt.ylabel('ylabel')<br><br>
-這樣你在括號中打的字串就會出現在圖中的座標軸旁邊了!<br>
-基本上matplot裡面還有很多各式各樣的功能可以美化圖，甚至實現存圖的功能，如果還有哪些想做的畫圖功能就再提吧!我知道就講，不知道就自己Google去吧~<br><br></ul> 
-
-
-<div style="text-align:left;background-color:#FFFACD;padding:5px;margin-bottom:5px;"><h2><a name="c">2016/12/16</a></h2></div>
+<div style="text-align:left;background-color:#FFFACD;padding:5px;margin-bottom:5px;"><h2><a name="c">數列</a></h2></div>
 <ul>
-<li><h3><a name="c1">數列的基本操作</a></h3></li>
+<li><h3><a name="c1">基本操作</a></h3></li>
 建立數列的方式有很多種，包含如[0,1,2]、range(3)以及np.arange(3)這幾種方式。<br>
 range只能建立一個以整數形成的等差數列，如range(0,3,1)<br>
 而np.arange使用上較range靈活，可以建立小數形成的數列，如np.arange(0,3,0.5)<br>
@@ -286,7 +201,7 @@ list=[1, 2, 3, 1, 2, 3, 1, 2, 3]<br>
 array=[ 0. 0.9 1.8 2.7 3.6]<br><br>
 
 <li><h3><a name="c3">List使用上的問題</a></h3></li>
-這東西有點不太好說明。基本上算是程式本身設計上的一些缺陷，但python同時也有提供相應的解決方法，所以倒也不是什麼大問題。以下為範例<br><br>
+這東西有點不太好說明。基本上算是程式本身設計上的一些特色(?)，但python同時也有提供相應的解決方法，所以倒也不是什麼大問題。以下為範例<br><br>
 程式碼<br>
 a=[1,2,3]<br>
 b=a<br>
@@ -302,60 +217,69 @@ b=[1, 5, 3]<br>
 ---<br>
 a=[1, 2, 3]<br>
 c=[1, 6, 3]<br><br>
-如果再編寫程式碼的時候，直接將b=a的話，python會把b和a連結為相同的東西，因此在第四行，我將b的第1個元素更換為5的時候，a的第一個元素也會被跟著替換掉。<br>
-因此，當你想要複製a的資料，但不希望在更動複製的資料時，變更a的資料時，可以使用像c=a[:]這樣的方法來複製。<br><br>
-
-<li><h3><a name="c4">建立自訂方程式(def)</a></h3></li>
-自訂方程式其實算是滿好用的一個指令，如果在程式碼中有一很常用到的計算式的話，就能利用def讓整個程式碼看起來更簡潔。以下為範例<br><br>
-<br>
-import matplotlib.pyplot as plt<br>
-import numpy as np<br>
-def velocity(x1,x2):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;y=x1*x2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;return y<br>
-t=np.arange(0.0,10.0,0.2)<br>
-v=velocity(9.8,t)<br>
-plt.plot(t,v,'-o')<br><br>
-輸出的結果會是一張v=at的圖，這邊我稍微講解一下define的使用。方程式的話，一般較熟悉的莫過於f(x)=y，意思就是給定(input)一個值x，經過f()這個方程式轉換後，形成一個y的值。<br>
-上面範例中v=velocity(9.8,t)進行的動作包含
-<ol><li>將9.8和t分別代入velocity(x1,x2)中的x1和x2，
-<li>經過方程式中的y=x1*x2計算後得出一個y值
-<li>把計算後得出的y值回傳給v=velocity(9.8,t)這條方程式中的v</ol><br><br>
-
-<li><h3><a name="c5">Vpython的使用</a></h3></li>
-Vpython要怎麼用的話基本上就參考<b><a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">vpython.org</a></b>這個網站就好，裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。要特別注意的地方是，當你把vpython的視窗關閉的時侯，附圖中的藍色框框會切換成像是開始鈕的綠色三角形。<br>
-<a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15625993_1060731567369545_8664764688851898907_o.jpg?oh=e363bca916f3a6253ee7b97b37c67301&oe=58B17942" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15284085_1061375057305196_6420006542766581879_n.jpg?oh=acaee0c0bbbe68163f8b5f0e06029eef&oe=58B2ADC0"></a><br><br>
-如果要再次執行程式碼的話，只要點下那個三角形，切換成橘色三角形就可以了!<br>
-另外，<a href="http://vpython.org/contents/contributed.html" STYLE="text-decoration:none" target="_blank"><b>這邊</b></a>有其他人做的模型可以提供參考。我昨天上傳的簡單程式碼也能參考看看。如果看了範例後。還是無法會意其中的意思的話在特別提出來吧!<br><br>
-範例程式:<br><br>
-from visual import *<br>
-import random as rd<br>
-floor = box(pos=vector(0,0,0), length=4, height=0.5, width=4, color=color.blue)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;#設定為方形、長寬高、顏色<br>
-h=helix(pos=floor.pos+vector(0,0.25,0),axis=vector(0,1,0))<br>
-&nbsp;&nbsp;&nbsp;&nbsp;#設定為彈簧形狀<br>
-ball = sphere(pos=vector(0,4,0), radius=1, color=color.red)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;#設定為圓形、半徑、顏色<br>
-arrow1=arrow(pos=ball.pos+vector(0,ball.radius,0), axis=vector(0,-2,0),color=color.yellow)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;#設定為箭頭形狀<br>
-arrow1.pos-=arrow1.axis<br>
-ball.velocity = vector(0,-1,0)<br>
-dt = 0.1<br><br>
-while 1:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rate (20) #播放速度，1/20s<br>
-&nbsp;&nbsp;&nbsp;&nbsp;ball.pos = ball.pos + ball.velocity*dt<br>
-&nbsp;&nbsp;&nbsp;&nbsp;arrow1.pos=arrow1.pos+ball.velocity*dt<br>
-&nbsp;&nbsp;&nbsp;&nbsp;ball.color=[rd.uniform(0.4,1.0), rd.uniform(0.4,1.0), rd.uniform(0.4,1.0)]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;h.axis=ball.pos<br>
-&nbsp;&nbsp;&nbsp;&nbsp;if ball.y &lt; ball.radius:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = abs(ball.velocity.y)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = ball.velocity.y - 9.8*dt<br><br>
+如果在編寫程式碼的時候，直接將b=a的話，python會把b和a連結為相同的東西，因此在第四行，我將b的第1個元素更換為5的時候，a的第一個元素也會被跟著替換掉。<br>
+如果想避免這樣的情形發生的話，在複製a的資料可以使用像c=a[:]這樣的方法來複製，這樣變數a和c就不會進行連動。<br><br>
 </ul>
 
-<div style="text-align:left;background-color:#E0FFFF;padding:5px;margin-bottom:5px;"><h2><a name="d">2016/12/23</a></h2></div>
+<div style="text-align:left;background-color:#E8FFC4;padding:5px;margin-bottom:5px;"><h2><a name="d">陳述(Statement)</a></h2></div>
+陳述可以被想成程式語言內的獨立元素。簡單的陳述大多以一個句子組成，如a=1，而複雜一點的陳述如for、if和while，則由多條句子所組成。在python裡使用複雜陳述時，必須使用縮排而非特殊字元或關鍵字來決定開始與結束。也就是用4個空白鍵(或是按一下Tab鍵)，來決定陳述的內容包含哪些部分。<br>
+<ul>
+<li><h3><a name="d1">for迴圈</a></h3></li>
+for迴圈是拿來執行固定次數的一個迴圈，執行的次數取決於你給的數列的長短。範例如下:<br><br>
+程式碼<br>
+a=[1,3,5,7,9]<br>
+for i in a:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print 'next'<br><br>
+輸出為<br>
+1<br>
+next<br>
+3<br>
+next<br>
+5<br>
+next<br>
+7<br>
+next<br>
+9<br>
+next<br>
 
-<ul><li><h3><a name="d1">矩陣</a></h3></li>
+<li><h3><a name="d2">條件語句(if)</a></h3></li>
+條件語句指的是假設一些條件，符合條件(True)就執行code，不符合(False)就不執行。設定的條件可以不只一個，以下做個範例<br><br>
+程式碼<br>
+a=[1,2,4,5,3,6]<br>
+for i in a:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if i&lt;2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print str(i)+' matches condition1'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elif i&lt;4:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print str(i)+' matches condition2'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print str(i) +' other'<br><br>
+輸出為<br>
+1 matches condition1<br>
+2 matches condition2<br>
+4 other<br>
+5 other<br>
+3 matches condition2<br>
+6 other<br><br>
+這邊特別注意到其實在a數列中1是同時符合i&lt;2以及i&lt;4的條件，但是這邊程式只顯示符合i&lt;2的結果。這是因為我們設定i&lt;4這個條件是用elif，也就是else if，也就是不符合先前條件且符合elif設定的條件的時候就執行code，如果前面條件符合的話就不執行。而如果有要顯示「1 matches condition2」的話，就把elif i&lt;4:改為if i&lt;4:就行了。<br><br>
+
+<li><h3><a name="d3">條件循環(while)</a></h3></li>
+while語句使用上有點像條件語句結合for迴圈。以下為範例<br><br>
+程式碼<br>
+i=0<br>
+while i&lt;3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=i+1 <br><br>
+輸出為<br>
+0<br>
+1<br>
+2<br><br>
+這組code表示的是當條件i&lt;3符合的時候，就執行print 和i=i+1，一直執行到條件不符合i&lt;3的時候就跳出while之外，執行下一步程式碼。<br><br>
+</ul>
+
+<div style="text-align:left;background-color:#ECFFFF;padding:5px;margin-bottom:5px;"><h2><a name="e">數學運算</a></h2></div>
+<ul>
+<li><h3><a name="e1">矩陣</a></h3></li>
 <ul><li><h4>矩陣運算</h4></li>
 矩陣的運算有兩種指令來運算，一種是把直接建立矩陣來運算，範例如下<br><br>
 import numpy as np<br>
@@ -383,7 +307,7 @@ np.linalg.det(a)<br><br>
 np.linalg.inv(a)<br><br>
 </ul>
 
-<li><h3><a name="d2">解常微分程式ODE(函式庫: <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint" STYLE="text-decoration:none" target="_blank">scipy.integrate.odeint</a>)</a></h3></li><br>
+<li><h3><a name="e2">解常微分程式ODE(函式庫: <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint" STYLE="text-decoration:none" target="_blank">scipy.integrate.odeint</a>)</a></h3></li><br>
 
 範例:解&nbsp;&nbsp;-cv-kx=ma，阻尼力+彈力=合力<br><br>
 import scipy.integrate as sci<br>
@@ -402,6 +326,59 @@ def fun(inp,t):<br>
 t=np.linspace(0.0,30.0,101) #(second)<br>
 x=sci.odeint(fun,ic,t) &nbsp;#sci.odeint(function,intitial condition)<br>
 plt.plot(t,x[:,0])&nbsp;#x-t graph<br>
+</ul>
+
+<div style="text-align:left;background-color:#CECEFF;padding:5px;margin-bottom:5px;"><h2><a name="f">作圖與動畫</a></h2></div>
+<ul>
+<li><h3><a name="f1">靜圖</a></h3></li>
+靜圖的函式庫主要是使用<a href="http://matplotlib.org/gallery.html" STYLE="text-decoration:none" target="_blank">matplotlib</a>這個函式庫。首先將函式庫引入<br><br>
+import matplotlib.pyplot as plt<br><br>
+接著如果要畫一個2D圖的話，我們需要先建立兩個長度相同的數列，如<br><br>
+x=[1,2,3,4]<br>
+y=[4,5,2,3]<br><br>
+這兩個數列代表著2D圖上的每一個x座標與y座標，跟excel畫圖有類似。畫圖方式如下<br><br>
+plt.plot(x,y,'-o',label="note")<br>
+plt.legend()<br><br>
+呈現的結果如附圖<br>
+<a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15325167_1053695844739784_8440714542392929066_o.jpg?oh=92e43eb38688346c58e403eaf110273b&oe=58E6A2BC" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-0/s261x260/15492454_1061363830639652_2374596060463853049_n.jpg?oh=e640a24ce33150f3b5a9163f0be0dc84&oe=58F11061"></a><br><br>
+第一條指令裡的第一和第二個元素代表x座標與y座標，第三個元素代表畫線的方式是用圓圈標示點並用線相連，第四個元素代表這條線的標籤(圖中右上角那個框框中的東西)。
+而為了要在圖中建立右上角那個框框，我們需要使用第二條指令來建立
+接著如果需要為座標軸標上單位的話，可以使用以下指令<br><br>
+plt.xlabel('xlabel')<br>
+plt.ylabel('ylabel')<br><br>
+這樣你在括號中打的字串就會出現在圖中的座標軸旁邊了!<br>
+基本上matplot裡面還有很多各式各樣的功能可以美化圖，甚至實現存圖的功能，如果還有哪些想做的畫圖功能就再提吧!我知道就講，不知道就自己Google去吧~<br><br>
+
+<li><h3><a name="f2">動畫(Vpython的使用)</a></h3></li>
+要學習Vpython要怎麼用的話，基本上可以參考<b><a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">Vpython</a>、<a href="http://www.glowscript.org/docs/VPythonDocs/index.html" STYLE="text-decoration:none" target="_blank">Vpython Help</a>和<a href="http://tcjd71.wixsite.com/vpython" STYLE="text-decoration:none" target="_blank">VPhysics NTU</a></b>這些網站就好。裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。要特別注意的地方是，當你把vpython的視窗關閉的時侯，附圖中的藍色框框會切換成像是開始鈕的綠色三角形。<br>
+<a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15625993_1060731567369545_8664764688851898907_o.jpg?oh=e363bca916f3a6253ee7b97b37c67301&oe=58B17942" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15284085_1061375057305196_6420006542766581879_n.jpg?oh=acaee0c0bbbe68163f8b5f0e06029eef&oe=58B2ADC0"></a><br><br>
+如果要再次執行程式碼的話，只要點下那個三角形，切換成橘色三角形就可以了!<br>
+另外，<a href="http://vpython.org/contents/contributed.html" STYLE="text-decoration:none" target="_blank"><b>這邊</b></a>有其他人做的模型可以提供參考。<br><br>
+範例程式:<br><br>
+from visual import *<br>
+import random as rd<br>
+floor = box(pos=vector(0,0,0), length=4, height=0.5, width=4, color=color.blue)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為方形、長寬高、顏色<br>
+h=helix(pos=floor.pos+vector(0,0.25,0),axis=vector(0,1,0))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為彈簧形狀<br>
+ball = sphere(pos=vector(0,4,0), radius=1, color=color.red)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為圓形、半徑、顏色<br>
+arrow1=arrow(pos=ball.pos+vector(0,ball.radius,0), axis=vector(0,-2,0),color=color.yellow)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#設定為箭頭形狀<br>
+arrow1.pos-=arrow1.axis<br>
+ball.velocity = vector(0,-1,0)<br>
+dt = 0.1<br><br>
+while 1:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rate (20) #播放速度，1/20s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ball.pos = ball.pos + ball.velocity*dt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;arrow1.pos=arrow1.pos+ball.velocity*dt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ball.color=[rd.uniform(0.4,1.0), rd.uniform(0.4,1.0), rd.uniform(0.4,1.0)]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;h.axis=ball.pos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if ball.y &lt; ball.radius:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = abs(ball.velocity.y)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = ball.velocity.y - 9.8*dt<br><br>
+
 </ul>
 
 </body>
