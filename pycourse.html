@@ -33,8 +33,9 @@ p.pos_fixed
 <li><a href="#b2" STYLE="text-decoration:none">函式庫的引入與使用</a></ul>
 <li><a href="#c" STYLE="text-decoration:none">數列</a>
 <ul><li><a href="#c1" STYLE="text-decoration:none">基本操作</a>
-<li><a href="#c2" STYLE="text-decoration:none">List和Array的使用差異</a>
-<li><a href="#c3" STYLE="text-decoration:none">List使用上的問題</a></ul>
+<li><a href="#c2" STYLE="text-decoration:none">相關函式</a>
+<li><a href="#c3" STYLE="text-decoration:none">List和Array的使用差異</a>
+<li><a href="#c4" STYLE="text-decoration:none">List使用上的問題</a></ul>
 <li><a href="#d" STYLE="text-decoration:none">陳述(Statement)</a>
 <ul><li><a href="#d1" STYLE="text-decoration:none">for迴圈</a>
 <li><a href="#d2" STYLE="text-decoration:none">條件語句(if)</a>
@@ -43,11 +44,11 @@ p.pos_fixed
 <ul><li><a href="#e1" STYLE="text-decoration:none">矩陣</a>
 <li><a href="#e2" STYLE="text-decoration:none">解常微分程式ODE</a>
 <li><a href="#e3" STYLE="text-decoration:none">階層與組合數</a>
-<li><a href="#e4" STYLE="text-decoration:none">隨機變數</a>
-<li><a href="#e5" STYLE="text-decoration:none">時間(time)</a></ul>
+<li><a href="#e4" STYLE="text-decoration:none">隨機變數(random)</a></ul>
 <li><a href="#f" STYLE="text-decoration:none">作圖與動畫</a>
 <ul><li><a href="#f1" STYLE="text-decoration:none">靜圖</a>
-<li><a href="#f2" STYLE="text-decoration:none">動畫(Vpython的使用)</a></ul>
+<li><a href="#f2" STYLE="text-decoration:none">靜圖相關函式</a>
+<li><a href="#f3" STYLE="text-decoration:none">動畫(Vpython的使用)</a></ul>
 </ul></td></table><br>
 
 
@@ -111,37 +112,23 @@ True<br><br>
 <li><h3><a name='a4'>常見特殊運算符號</a></h3></li>
 <table  width="300"border=1>
 <td><b></b></td>
-<td><b>符號形式</b></td>
-<td><b>代表意義</b></td><tr>
+<td><b>符號形式</b></td><td><b>代表意義</b></td><tr>
 <td rowspan=8 align=center>算數</td>
-<td>a+b</td>
-<td>a加b</td><tr>
-<td>a-b</td>
-<td>a減b</td><tr>
-<td>a*b</td>
-<td>a乘b</td><tr>
-<td>a/b</td>
-<td>a除b</td><tr>
-<td>a**b</td>
-<td>a<sup>b</sup></td><tr>
-<td>a%b</td>
-<td>a除b的餘數</td><tr>
-<td>a//b</td>
-<td>a除b的商</td><tr>
-<td>a+=b</td>
-<td>a=a+b</td><tr>
+<td>a+b</td><td>a加b</td><tr>
+<td>a-b</td><td>a減b</td><tr>
+<td>a*b</td><td>a乘b</td><tr>
+<td>a/b</td><td>a除b</td><tr>
+<td>a**b</td><td>a<sup>b</sup></td><tr>
+<td>a%b</td><td>a除b的餘數</td><tr>
+<td>a//b</td><td>a除b的商</td><tr>
+<td>a+=b</td><td>a=a+b</td><tr>
 <td rowspan=4 align=center>比較</td>
-<td>a==b</td>
-<td>比較a和b是否相等</td><tr>
-<td>a!=b</td>
-<td>比較a和b是否不相等</td><tr>
-<td>a>b</td>
-<td>比較a是否大於b</td><tr>
-<td>a>=b</td>
-<td>比較a是否大於等於b</td><tr>
+<td>a==b</td><td>比較a和b是否相等</td><tr>
+<td>a!=b</td><td>比較a和b是否不相等</td><tr>
+<td>a>b</td><td>比較a是否大於b</td><tr>
+<td>a>=b</td><td>比較a是否大於等於b</td><tr>
 <td rowspan=1 align=center>字串</td>
-<td>'\n'</td>
-<td>換行</td><tr>
+<td>'\n'</td><td>換行</td><tr>
 </table>
 </ul>
 
@@ -204,7 +191,35 @@ print a[-1]<br><br>
 2<br>
 4<br><br>
 
-<li><h3><a name="c2">List和Array的使用差異</a></h3></li>
+<li><h3><a name="c2">相關函式</a></h3></li>
+<ul><li><h4><a href='http://www.runoob.com/python/python-lists.html'STYLE="text-decoration:none" target="_blank">list</a>相關</h4></li>
+a和b為list<br>
+<table border=1>
+<td><b>功能</b></td><td><b>範例</b></td><tr>
+<td>list長度</td><td>len(a)</td><tr>
+<td>呼叫元素</td><td>a[0]</td><tr>
+<td>呼叫一堆元素</td><td>a[0:3]</td><tr>
+<td>合併兩個list</td><td>a+b</td><tr>
+<td>刪除特定位置的元素</td><td>del a[0]</td><tr>
+<td>添加元素</td><td>a.append(0)</td><tr>
+<td>查詢某元素位置</td><td>a.index(0)</td>
+</table>
+
+<li><h4>array相關</h4></li>
+a為array<br>
+<table border=1>
+<td><b>功能</b></td><td><b>範例</b></td><tr>
+<td>全零數列</td><td>np.zeros(2)</td><tr>
+<td>全零矩陣</td><td>np.zeros((2,2))</td><tr>
+<td>呼叫矩陣中的元素</td><td>a[0,0]</td><tr>
+<td>呼叫所有行</td><td>a[:,0]</td><tr>
+<td>呼叫所有列</td><td>a[0,:]</td><tr>
+<td>重排</td><td>a.reshape((3,2))</td>
+</table>
+
+</ul>
+
+<li><h3><a name="c3">List和Array的使用差異</a></h3></li>
 乘法對於list和array來說有不同的意義。對於list而言，乘法是對自己本身的數列重複幾次的指令，如[1,2,3]這個list去*2的話，就會形成[1,2,3,1,2,3]的list。另一方面，array所形成的數列的乘除法則比較相近於一般認知的乘除，也就是將數列出的每個元素都進行乘除法。以下為範例<br><br>
 程式碼<br>
 import numpy as np<br>
@@ -218,7 +233,7 @@ print 'array='+str(array)<br><br>
 list=[1, 2, 3, 1, 2, 3, 1, 2, 3]<br>
 array=[ 0. 0.9 1.8 2.7 3.6]<br><br>
 
-<li><h3><a name="c3">List使用上的問題</a></h3></li>
+<li><h3><a name="c4">List使用上的問題</a></h3></li>
 這東西有點不太好說明。基本上算是程式本身設計上的一些特色(?)，但python同時也有提供相應的解決方法，所以倒也不是什麼大問題。以下為範例<br><br>
 程式碼<br>
 a=[1,2,3]<br>
@@ -396,12 +411,30 @@ plt.show()<br><br>
 <a href="https://scontent.ftpe1-2.fna.fbcdn.net/v/t31.0-8/16178677_1095281523914549_1907602377216472550_o.jpg?oh=c752855efab63b6c645a3b9f1fdd2507&oe=590298D2" STYLE="text-decoration:none" target="_blank"><img src="https://scontent.ftpe1-2.fna.fbcdn.net/v/t1.0-0/s403x403/16299495_1095287740580594_5048218262484817135_n.jpg?oh=3302fe58b906328becb7fac6010b3f84&oe=59044F94"></a><br><br>
 第一條指令裡的第一和第二個元素代表x座標與y座標，第三個元素代表畫線的方式是用圓圈標示點並用線相連，第四個元素代表這條線的標籤(圖中右上角那個框框中的東西)。
 而為了要在圖中建立右上角那個框框，我們需要使用第二條指令來建立
-接著如果需要為座標軸標上單位的話，可以使用以下指令<br><br>
+
 plt.xlabel('xlabel')<br>
 plt.ylabel('ylabel')<br><br>
 這樣你在括號中打的字串就會出現在圖中的座標軸旁邊了!<br><br>
 
-<li><h3><a name="f2">動畫(Vpython的使用)</a></h3></li>
+<li><h3><a name="f2">靜圖相關函式</a></h3></li>
+<ul><li><h4>plt.plot()的可添加功能</h4></li>
+<table border=1>
+<td><b>功能</b></td><td><b>範例</b></td><tr>
+<td>連結資料點的圖案</td><td>'-o'</td><tr>
+<td>資料線/點的顏色</td><td>color=[0.2,0.3,0.4]</td><tr>
+<td>資料標籤</td><td>label='string'</td><tr>
+</table>
+<li><h4>標示坐標軸</h4></li>
+plt.xlabel('string')<br>
+plt.ylabel('string')<br>
+<li><h4>分割視窗</h4></li>
+假設要畫六張圖，分布為上下兩張圖左右三張圖的排列方式: ( 2 x 3 )<br><br>
+<table border="1" ><tbody><tr><td>(1)</td><td>(2)</td><td>(3)</td></tr><tr><td>(4)</td><td>(5)</td><td>(6)</td></tr></tbody></table><br>
+如果要畫第(5)張圖的位置輸入<b>plt.subplot(235)</b>
+
+</ul>
+
+<li><h3><a name="f3">動畫(Vpython的使用)</a></h3></li>
 要學習Vpython要怎麼用的話，基本上可以參考<b><a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">Vpython</a>、<a href="http://www.glowscript.org/docs/VPythonDocs/index.html" STYLE="text-decoration:none" target="_blank">Vpython Help</a>和<a href="http://tcjd71.wixsite.com/vpython" STYLE="text-decoration:none" target="_blank">VPhysics NTU</a></b>這些網站就好。裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。要特別注意的地方是，當你把vpython的視窗關閉的時侯，附圖中的藍色框框會切換成像是開始鈕的綠色三角形。<br>
 <a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15625993_1060731567369545_8664764688851898907_o.jpg?oh=e363bca916f3a6253ee7b97b37c67301&oe=58B17942" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15284085_1061375057305196_6420006542766581879_n.jpg?oh=acaee0c0bbbe68163f8b5f0e06029eef&oe=58B2ADC0"></a><br><br>
 如果要再次執行程式碼的話，只要點下那個三角形，切換成橘色三角形就可以了!<br>
@@ -432,6 +465,5 @@ while 1:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = ball.velocity.y - 9.8*dt<br><br>
 
 </ul>
-
 </body>
 </html>
