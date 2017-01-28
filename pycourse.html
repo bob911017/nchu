@@ -39,10 +39,11 @@ p.pos_fixed
 <ul><li><a href="#d1" STYLE="text-decoration:none">for迴圈</a>
 <li><a href="#d2" STYLE="text-decoration:none">條件語句(if)</a>
 <li><a href="#d3" STYLE="text-decoration:none">條件循環(while)</a></ul>
-<li><a href="#e" STYLE="text-decoration:none">數學運算</a>
+<li><a href="#e" STYLE="text-decoration:none">數學工具</a>
 <ul><li><a href="#e1" STYLE="text-decoration:none">矩陣</a>
 <li><a href="#e2" STYLE="text-decoration:none">解常微分程式ODE</a>
-<li><a href="#e3" STYLE="text-decoration:none">階層與組合數</a></ul>
+<li><a href="#e3" STYLE="text-decoration:none">階層與組合數</a>
+<li><a href="#e4" STYLE="text-decoration:none">隨機變數</a></ul>
 <li><a href="#f" STYLE="text-decoration:none">作圖與動畫</a>
 <ul><li><a href="#f1" STYLE="text-decoration:none">靜圖</a>
 <li><a href="#f2" STYLE="text-decoration:none">動畫(Vpython的使用)</a></ul>
@@ -54,12 +55,12 @@ p.pos_fixed
 <li><h3><a name='a0'>安裝</a></h3></li>
 <ol>
 <li>進入<a href="http://python-xy.github.io/"STYLE="text-decoration:none" target="_blank">Python(x,y)</a></li>
-<li>點選右上角的<a href='http://python-xy.github.io/downloads.html'><img src="http://python-xy.github.io/images/dl_icon.png"width="20" height="20"></a>進入下載頁面</li>
+<li>點選右上角的<a href='http://python-xy.github.io/downloads.html'STYLE="text-decoration:none" target="_blank"><img src="http://python-xy.github.io/images/dl_icon.png"width="20" height="20"></a>進入下載頁面</li>
 <li>點選<a href='http://ftp.ntua.gr/pub/devel/pythonxy/Python(x,y)-2.7.10.0.exe'STYLE="text-decoration:none" target="_blank">Python(x,y)-2.7.10.0.exe</a>下載安裝檔</li>
 <li>開啟安裝檔後，會進入Choose Users的介面，選擇Install just for me，接著點選Next</li>
 <li>進入Choose Components的介面後，將Select the type of install那一欄改為Full，點Next就開始安裝
 <li>安裝完桌面應該會有<img src="http://python-xy.github.io/images/logo.png"width="50" height="25">，點開它</li>
-<li>開啟後會出現如下圖的視窗，選擇紅黑圖案的鈕進入python</li><a href='https://scontent.ftpe1-2.fna.fbcdn.net/v/t1.0-9/16266306_1095322690577099_6752668180104757599_n.jpg?oh=9d193cfa7d4736e050f2a5f1eabc5c72&oe=591A76B0'><img src="https://scontent.ftpe1-2.fna.fbcdn.net/v/t1.0-9/16265619_1095325320576836_2921744933234946721_n.jpg?oh=b175a4cf8e3edd08f32af8f683481e2c&oe=591888F1"></a>
+<li>開啟後會出現如下圖的視窗，選擇紅黑圖案的鈕進入python</li><a href='https://scontent.ftpe1-2.fna.fbcdn.net/v/t1.0-9/16266306_1095322690577099_6752668180104757599_n.jpg?oh=9d193cfa7d4736e050f2a5f1eabc5c72&oe=591A76B0' target="_blank"><img src="https://scontent.ftpe1-2.fna.fbcdn.net/v/t1.0-9/16265619_1095325320576836_2921744933234946721_n.jpg?oh=b175a4cf8e3edd08f32af8f683481e2c&oe=591888F1"></a>
 </ol>
 
 <li><h3><a name='a1'>基礎概念</a></h3></li>
@@ -171,12 +172,15 @@ plt.plot(t,v,'-o')<br><br>
 使用的方式為「import 函式庫名稱&nbsp;as&nbsp;代稱」這樣的形式<br><br>
 範例:<br>&nbsp;import&nbsp;numpy&nbsp;as&nbsp;np<br><br>
 打上如上列式子的程式碼後，就完成引入函式庫的動作了。此時當我們要引用函式庫numpy中的函式pi的功能時，只要打np.pi。當然覺得取代稱很麻煩也可以直接打import&nbsp;numpy就好，而引入函式的形式就變為numpy.pi。<br>
-<li><h4>第二個引入函式庫的形式</h4></li><br>
+<li><h4>自動尋找函式位在哪個函式庫中</h4></li><br>
 這個引入函式庫的方式比較偷懶。表示的方式是<br><br>
 「from 函式庫 import *」<br><br>
 範例:from numpy import *<br><br>
-這個指令會自訂幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，程式執行的速度相比直接告訴他位置會來的慢。<br><br>
-
+這個指令會自動幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，程式執行的速度相比直接告訴他位置會來的慢。<br><br>
+<li><h4>直接從函式庫中引入函式</h4></li>
+這種引入方式就是直接從函式庫中引入所需的函式，可以簡單的只打pi就直接使用pi這個函式，也不會造成像上一種方法一樣，必須讓電腦去找函式在哪個函式庫中，表示的形式如下<br><br>
+from numpy import pi,sin<br>
+a=sin(pi/2)<br><br>
 	</ol>
 </ul>
 
@@ -290,7 +294,7 @@ while i&lt;3:<br>
 這組code表示的是當條件i&lt;3符合的時候，就執行print 和i=i+1，一直執行到條件不符合i&lt;3的時候就跳出while之外，執行下一步程式碼。<br><br>
 </ul>
 
-<div style="text-align:left;background-color:#ECFFFF;padding:5px;margin-bottom:5px;"><h2><a name="e">數學運算</a></h2></div>
+<div style="text-align:left;background-color:#ECFFFF;padding:5px;margin-bottom:5px;"><h2><a name="e">數學工具</a></h2></div>
 <ul>
 <li><h3><a name="e1">矩陣</a></h3></li>
 <ul><li><h4>矩陣運算</h4></li>
@@ -340,16 +344,28 @@ x=sci.odeint(fun,ic,t) &nbsp;#sci.odeint(function,intitial condition)<br>
 plt.plot(t,x[:,0])&nbsp;#x-t graph<br>
 
 <li><h3><a name="e3">階層與組合數(<a href='https://docs.scipy.org/doc/scipy-0.16.0/reference/misc.html' STYLE="text-decoration:none" target="_blank">scipy.misc</a></a>)</h3></li>
-<ul><li><b>階層</b></li>
+<ul><li><h4>階層</h4></li>
 計算3!的值，以下為程式碼<br><br>
 import scipy.misc as scm<br>
-x=scm.factorial(3)<br>
-x<br><br>
-<li><b>組合數</b></li>
+x=scm.factorial(3)<br><br>
+<li><h4>組合數</h4></li>
 計算C5取2，以下為程式碼<br><br>
 import scipy.misc as scm<br>
-y=scm.comb(5,2)<br>
-y<br><br>
+y=scm.comb(5,2)<br><br>
+</ul>
+
+<li><h3><a name="e4">隨機變數(<a href='https://docs.python.org/2/library/random.html' STYLE="text-decoration:none" target="_blank">random</a></a>)</h3></li>
+<ul><li><h4>產生隨機變數</h4></li>
+import random as rd<br>
+r=rd.random()<br><br>
+<li><h4>洗牌</h4></li>
+import random as rd<br>
+a=range(10)<br>
+rd.shuffle(a)<br><br>
+<li><h4>隨機矩陣</h4></li>
+import <a href='https://docs.scipy.org/doc/numpy/reference/routines.random.html' STYLE="text-decoration:none" target="_blank">numpy.random</a> as nrd<br>
+r=nrd.random((5,5))
+
 </ul>
 </ul>
 
@@ -372,8 +388,7 @@ plt.show()<br><br>
 接著如果需要為座標軸標上單位的話，可以使用以下指令<br><br>
 plt.xlabel('xlabel')<br>
 plt.ylabel('ylabel')<br><br>
-這樣你在括號中打的字串就會出現在圖中的座標軸旁邊了!<br>
-基本上matplot裡面還有很多各式各樣的功能可以美化圖，甚至實現存圖的功能，如果還有哪些想做的畫圖功能就再提吧!我知道就講，不知道就自己Google去吧~<br><br>
+這樣你在括號中打的字串就會出現在圖中的座標軸旁邊了!<br><br>
 
 <li><h3><a name="f2">動畫(Vpython的使用)</a></h3></li>
 要學習Vpython要怎麼用的話，基本上可以參考<b><a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">Vpython</a>、<a href="http://www.glowscript.org/docs/VPythonDocs/index.html" STYLE="text-decoration:none" target="_blank">Vpython Help</a>和<a href="http://tcjd71.wixsite.com/vpython" STYLE="text-decoration:none" target="_blank">VPhysics NTU</a></b>這些網站就好。裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。要特別注意的地方是，當你把vpython的視窗關閉的時侯，附圖中的藍色框框會切換成像是開始鈕的綠色三角形。<br>
