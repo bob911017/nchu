@@ -364,7 +364,17 @@ a=range(10)<br>
 rd.shuffle(a)<br><br>
 <li><h4>隨機矩陣</h4></li>
 import <a href='https://docs.scipy.org/doc/numpy/reference/routines.random.html' STYLE="text-decoration:none" target="_blank">numpy.random</a> as nrd<br>
-r=nrd.random((5,5))
+r=nrd.random((5,5))<br><br>
+</ul>
+
+<li><h3><a name="e5">時間(<a href='https://docs.python.org/2/library/time.html' STYLE="text-decoration:none" target="_blank">time</a></a>)</h3></li>
+<ul><li><h4>用clock計時</h4></li>
+clock這個函式紀錄的是從程式開始運行後經過的時間，輸出的是以秒為單位，type為float的資料，以下為使用範例<br><br>
+import time as t<br>
+tstart=t.clock()<br>
+要執行的程式碼<br>
+tend=t.clock()<br>
+print 'The program takes '+str(tend-tstart)+' seconds.'<br><br>
 
 </ul>
 </ul>
