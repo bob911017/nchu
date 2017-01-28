@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +42,8 @@ p.pos_fixed
 <li><a href="#d3" STYLE="text-decoration:none">條件循環(while)</a></ul>
 <li><a href="#e" STYLE="text-decoration:none">數學運算</a>
 <ul><li><a href="#e1" STYLE="text-decoration:none">矩陣</a>
-<li><a href="#e2" STYLE="text-decoration:none">解常微分程式ODE</a></ul>
+<li><a href="#e2" STYLE="text-decoration:none">解常微分程式ODE</a>
+<li><a href="#e3" STYLE="text-decoration:none">階層與組合數</a></ul>
 <li><a href="#f" STYLE="text-decoration:none">作圖與動畫</a>
 <ul><li><a href="#f1" STYLE="text-decoration:none">靜圖</a>
 <li><a href="#f2" STYLE="text-decoration:none">動畫(Vpython的使用)</a></ul>
@@ -338,6 +340,19 @@ def fun(inp,t):<br>
 t=np.linspace(0.0,30.0,101) #(second)<br>
 x=sci.odeint(fun,ic,t) &nbsp;#sci.odeint(function,intitial condition)<br>
 plt.plot(t,x[:,0])&nbsp;#x-t graph<br>
+
+<li><h3><a name="e3">階層與組合數(<a href='https://docs.scipy.org/doc/scipy-0.16.0/reference/misc.html' STYLE="text-decoration:none" target="_blank">scipy.misc</a></a>)</h3></li>
+<ul><li><b>階層</b></li>
+計算3!的值，以下為程式碼<br><br>
+import scipy.misc as scm<br>
+x=scm.factorial(3)<br>
+x<br><br>
+<li><b>組合數</b></li>
+計算C5取2，以下為程式碼<br><br>
+import scipy.misc as scm<br>
+y=scm.comb(5,2)<br>
+y<br><br>
+</ul>
 </ul>
 
 <div style="text-align:left;background-color:#CECEFF;padding:5px;margin-bottom:5px;"><h2><a name="f">作圖與動畫</a></h2></div>
