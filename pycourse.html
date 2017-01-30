@@ -22,7 +22,7 @@ p.pos_fixed
 <table border=1>
 <td><b>目錄</b>
 <ul>
-<li><a href="#a" STYLE="text-decoration:none">簡介</a>
+<h5><li><a href="#a" STYLE="text-decoration:none">簡介</a>
 <ul><li><a href="#a0" STYLE="text-decoration:none">安裝</a>
 <li><a href="#a1" STYLE="text-decoration:none">基礎概念</a>
 <li><a href="#a2" STYLE="text-decoration:none">資料的類型(Type)</a>
@@ -44,11 +44,13 @@ p.pos_fixed
 <ul><li><a href="#e1" STYLE="text-decoration:none">矩陣</a>
 <li><a href="#e2" STYLE="text-decoration:none">解常微分程式ODE</a>
 <li><a href="#e3" STYLE="text-decoration:none">階層與組合數</a>
-<li><a href="#e4" STYLE="text-decoration:none">隨機變數(random)</a></ul>
+<li><a href="#e4" STYLE="text-decoration:none">隨機數(random)</a></ul>
 <li><a href="#f" STYLE="text-decoration:none">作圖與動畫</a>
 <ul><li><a href="#f1" STYLE="text-decoration:none">靜圖</a>
 <li><a href="#f2" STYLE="text-decoration:none">靜圖相關函式</a>
 <li><a href="#f3" STYLE="text-decoration:none">動畫(Vpython的使用)</a></ul>
+<li><a href="#g" STYLE="text-decoration:none">應用程式</a>
+<ul><li><a href="#g1" STYLE="text-decoration:none">使用者輸入</a></ul></h5>
 </ul></td></table><br>
 
 
@@ -370,8 +372,8 @@ import scipy.misc as scm<br>
 y=scm.comb(5,2)<br><br>
 </ul>
 
-<li><h3><a name="e4">隨機變數(<a href='https://docs.python.org/2/library/random.html' STYLE="text-decoration:none" target="_blank">random</a></a>)</h3></li>
-<ul><li><h4>產生隨機變數</h4></li>
+<li><h3><a name="e4">隨機數(<a href='https://docs.python.org/2/library/random.html' STYLE="text-decoration:none" target="_blank">random</a></a>)</h3></li>
+<ul><li><h4>產生隨機數</h4></li>
 import random as rd<br>
 r=rd.random()<br><br>
 <li><h4>洗牌</h4></li>
@@ -465,5 +467,30 @@ while 1:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y = ball.velocity.y - 9.8*dt<br><br>
 
 </ul>
+
+<div style="text-align:left;background-color:#EBD3E8;padding:5px;margin-bottom:5px;"><h2><a name="g">應用程式</a></h2></div>
+<ul>
+<li><h3><a name="g1">使用者輸入</a></h3></li>
+使用者輸入這個指令可以依據使用者輸入的資料，讓程式進行相應的動作，其中指令分為兩類，一個是輸入數字或字串的input()，一個是將所有輸入值轉為字串的raw_input()，使用範例如下:<br><br>
+<ul><li>input程式碼</li>
+a=input('type anything: ')<br>
+print a,type(a)<br>
+使用方法及結果如圖<br>
+<a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15440344_1053675074741861_8285242432193006478_o.jpg?oh=d926bf1d665f8a1ceb3ae0a7ea28346a&oe=58F1A9AC" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15590177_1061359727306729_1717516064027129104_n.jpg?oh=82705140cc471df6994b3f49433fd4aa&oe=58F5F64A"></a><br><br>
+點擊綠色框框的區塊，使用者就能給a一個數值(int, float...)或是字串(string)了<br><br>
+另一方面，使用指令raw_input的話，不管輸入的東西是哪一種，他都會將這些東西轉成字串。範例如下:<br><br>
+<li>raw_input程式碼</li><br>
+a=raw_input('type anything: ')<br>
+print a,type(a)<br>
+輸入<br> 
+4<br>
+輸出為<br>
+4 &lt;type 'str'&gt;<br><br>
+</ul>
+
+<li><h3><a name="g2">製作執行檔(exe)</a></h3></li>
+如果要將py檔轉成exe檔，可以使用py2exe和distutils.core這兩個函式庫，詳細操作可以參考這個兩個網頁(<a href="http://ghaouse.blogspot.tw/2011/09/py2exe.html" STYLE="text-decoration:none" target="_blank">ghaouse's site</a>和<a href="http://koko.ntex.tw/wordpress/build-python-exe-using-py2exe/" STYLE="text-decoration:none" target="_blank">Eason's Garage</a>)。
+</ul>
+
 </body>
 </html>
