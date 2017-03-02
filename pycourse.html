@@ -30,14 +30,21 @@ edited by 陳柏因
           <li><a href="#b4" STYLE="text-decoration:none">資料的類型(Type)</a>
           <li><a href="#b5" STYLE="text-decoration:none">for迴圈</a>
       </ul>
+      <li><a href="#c" STYLE="text-decoration:none">2017/03/03</a>
+      <ul>
+          <li><a href="#c1" STYLE="text-decoration:none">function and library</a>
+          <li><a href="#c2" STYLE="text-decoration:none">true and faulse</a>
+          <li><a href="#c3" STYLE="text-decoration:none">條件語句</a>
+      </ul>
   </h5></ul>
   </td>
 </table>
 <hr>
 <h2>更新內容</h2>
 <ul>
-	<li><b>03/02_12:10:作業第三題補充說明</b></li>
+	<li><b>2017/03/02_12:10:作業第三題補充說明</b></li>
     由於本人疏失，本作業暫以0作為費波那契數列的第一項，第二項為1，接著是1,2,3,5,...
+    <li><b>2017/03/02_18:52:新增3/3標題、部分程式碼及作業</b></li>
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
@@ -127,5 +134,37 @@ edited by 陳柏因
 </ol>
 </ul>
 <hr>
+
+<h2><a name="c">2017/03/03</a></h2>
+<ul>
+	<li><h3><a name="c1">function and library</a></h3></li>
+<pre>
+def velocity(x1,x2):
+	y=x1*x2    
+    return y
+    
+for t in range(5):
+    v=velocity(9.8,t)
+    print 't='+str(t)+'s','v='+str(v)+'m/s'
+</pre>
+    <li><h3><a name="c2">true and faulse</a></h3></li>
+    <li><h3><a name="c3">條件語句</a></h3></li>
+<pre>
+a=[0,1,5,6,4,2]
+for i in a:
+    if i&lt;2:
+        print str(i)+'&lt;2'
+    elif i&lt;4:
+        print str(i)+'&lt;4'
+    else:
+        print str(i)+' other'
+</pre>
+    <li><h3>作業</h3></li>
+    <ol>
+    	<li>用def製作一個可以計算組合數的function
+        <li>用scipy.misc這個library中的comb這個function，確認上一題的function是可行的(測試C5取2就好)
+        <li>找出1~100中，2的倍數和3的倍數各有幾個
+    </ol>
+</ul>
 </body>
 </html>
