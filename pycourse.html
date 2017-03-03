@@ -42,17 +42,37 @@ edited by 陳柏因
 <hr>
 <h2>更新內容</h2>
 <ul>
-	<li><b>2017/03/02_12:10:作業第三題補充說明</b></li>
-    由於本人疏失，本作業暫以0作為費波那契數列的第一項，第二項為1，接著是1,2,3,5,...
+	<li><b>2017/03/03_11:03: 2017/03/03內容更新</b>
+	<li><b>2017/03/03_11:03: 前言新增'成績分配與作業繳交'、'做作業的注意事項'和'計算程式執行的時間'部分</b>
+	<li><b>2017/03/03_09:36: Using Python20170227.pptx檔案更新已上傳至ecampus</b>
+    <li><b>2017/03/03_09:36: Using Python20170303.pptx檔案已上傳至ecampus</b>
     <li><b>2017/03/02_18:52:新增3/3標題、部分程式碼及作業</b></li>
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
 <p title='注意事項'>※這個網站是提供給有修中興普通物理學的學生，學習python2.7.10版的參考資料使用。我會盡量把每次上課的內容都整理在這個網誌裡。上課我會用PPT和<a href='https://bob911017.github.io/learncode/python.html' target="_blank" ><b>個人網頁</b></a>搭配使用。這算是我第一次教課，上課的速度如果太快或是聽不懂我在說什麼的話，請多包涵，之後也可以跟我反應。課堂外要聯絡我就用<a href='https://www.facebook.com/bob.chen.37051'STYLE="text-decoration:none" target="_blank" ><b>facebook</b></a>吧~</p>
 <p>學python的理由，我想老師大概上課都說明了。對我而言因為我不必進行系統的維護，所以python大概就只是一個可以幫我做運算、整理數據或是做圖之類的工具。這個課大概只有6週的時間，所以只會說明一些基本的東西和程式碼編寫的概念，後面各位要製作專題的時候，應該會用到不少課堂上沒教過的指令，這些可能就要自己上網查詢怎麼使用或是問助教。</p>
-<h3>成績分配</h3>
-<p title='成績分配'>作業10分和期末專題5分，共佔總成績15分<br>
-作業請在隔週上課之前交，交上程式碼.py檔，至助教陳師漢的信箱(citrus2717@gmail.com)。作業的檔案命名為4105054XXX(自己學號)+姓名</p>
+<h3>成績分配與作業繳交</h3>
+<p title='成績分配與作業繳交'>作業10分和期末專題5分，共佔總成績15分<br>
+作業請在隔週上課之前交，交上程式碼.py檔，至助教陳師漢的信箱(citrus2717@gmail.com)。<br>
+作業的檔案命名為410XXXXXXX(自己學號)+姓名-?.py，如「<b>4102054036陳柏因-1.py</b>」，郵件的主旨請打python_作業?，「<b>python_作業一</b>」</p>
+
+<h3>做作業的注意事項</h3>
+基本上作業有問題都可以找助教討論，但請盡量不要直接說不會，或是甩一大串程式碼過來，然後說「程式怎麼跑不動?」，這樣我們會不知道怎麼引導各位思考。建議是還不習慣編寫程式的人可以使用<a href="#b3" STYLE="text-decoration:none">附註</a>的功能，標示自己到底寫了什麼，想一下為什麼程式是如何運行的。如果這樣還是不行的話，請盡快聯絡助教，幫你們debug。<br>
+這裡可以看一下個未繳交作業的狀況，如果有誤再跟助教聯絡:<a href='https://docs.google.com/spreadsheets/d/1CUWLqS1_eZKtu5TZ9ElulAUO1uRBWp9hOa0E9a71FEA/edit?usp=sharing' target="_blank"STYLE="text-decoration:none" ><b>連結</b></a>
+
+<h3>計算程式執行的時間</h3>
+由於第一次作業有部分的人製作出來的程式碼執行的時間過久，造成助教閱讀上的負擔。因此這邊教一下如何使用計算程式執行時間的function。如果想了解內部怎麼運作可以自己google或找助教。請以後交上來的功課都要附上程式運行的時間，<b>輸出的時間不得大於60</b>，會依情況做調整。<br>
+<pre>
+import time
+tStart=time.time()
+
+待測時間的程式碼
+
+tEnd=time.time()
+print 'total time='+str(tEnd-tStart)
+</pre>
+只要最後輸出的 total time 小於60即可。
 <hr>
 
 <h2><a name="b">2017/02/24</a></h2>
@@ -138,17 +158,54 @@ edited by 陳柏因
 <h2><a name="c">2017/03/03</a></h2>
 <ul>
 	<li><h3><a name="c1">function and library</a></h3></li>
-<pre>
+    <ol>
+    	<li><b>def function</b></li><br><br>
+        function是一個能自己設定好功能，便於重複使用的一個工具。如果在程式碼中有一很常用到的計算式的話，也能自己利用def function，讓整個程式碼看起來更簡潔。以下為範例
+        <pre>
 def velocity(x1,x2):
-	y=x1*x2    
+	y=x1*x2    
     return y
     
 for t in range(5):
     v=velocity(9.8,t)
     print 't='+str(t)+'s','v='+str(v)+'m/s'
 </pre>
+		<li><b>import library</b></li><br><br>
+        在python的世界裡，已經有許多人編寫好的函式可供引入並使用，如<a href='http://scipy.org/'STYLE="text-decoration:none" target="_blank"><b>SciPy.org</b></a>這裡面提供的，其中包含各種數學運算或繪圖等不同的功能。以下就來說明如何使用<br><br>
+	<ol>
+		<li><b>載入函式庫並取代稱</b></li><br><br>
+		使用的方式為「import 函式庫名稱&nbsp;as&nbsp;代稱」這樣的形式<br><br>
+		範例:<br>&nbsp;import&nbsp;numpy&nbsp;as&nbsp;np<br><br>
+		打上如上列式子的程式碼後，就完成引入函式庫的動作了。此時當我們要引用函式庫numpy中的函式pi的功能時，只要打np.pi。當然覺得取代稱很麻煩也可以直接打import&nbsp;numpy就好，而引入函式的形式就變為numpy.pi。<br>
+		<li><h4>自動尋找函式位在哪個函式庫中</h4></li><br>
+		這個引入函式庫的方式比較偷懶。表示的方式是<br><br>
+		「from 函式庫 import *」<br><br>
+		範例:from numpy import *<br><br>
+		這個指令會自動幫你搜尋你打的函式在哪個函式庫中，也就是本來要打np.pi的情況，你只要打pi就可以直接使用。這雖然對編寫者很方便，但會讓電腦多花一些時間尋找你的函式在哪個函式庫，程式執行的速度相比直接告訴他位置會來的慢。<br><br>
+		<li><h4>直接從函式庫中引入函式</h4></li>
+		這種引入方式就是直接從函式庫中引入所需的函式，可以簡單的只打pi就直接使用pi這個函式，也不會造成像上一種方法一樣，必須讓電腦去找函式在哪個函式庫中，表示的形式如下<br><br>
+		from numpy import pi,sin<br>
+		a=sin(pi/2)<br><br>
+	</ol>
+	</ol>
     <li><h3><a name="c2">true and faulse</a></h3></li>
+    判斷條件是通過判斷一個或多個語句的結果，並輸出True或False。判斷式中大概包含等於(==)、不等於(!=)、大於(>)、小於(&lt;)和大於等於(&gt;=)等種類。<br>
+	當符合判斷式條件的時候，Python會給出True的回應，反之則為False。大家可以用以下程式碼進行嘗試<br><br>
+	程式碼<br>
+	print 1==1<br>
+	print 1!=1<br><br>
+	輸出為<br>
+	True<br>
+	False<br><br>
+	另外如果有多個條件的話，則可以使用聯集(or)或是交集(and)的概念，範例如下<br><br>
+	print 1==1 or 1!=1<br><br>
+	結果為<br>
+	True<br><br>
+    
+    
     <li><h3><a name="c3">條件語句</a></h3></li>
+    條件語句指的是假設一些條件，符合條件(True)就執行code，不符合(False)就不執行。設定的條件可以不只一個，以下做個範例:<br><br>
+	程式碼<br>
 <pre>
 a=[0,1,5,6,4,2]
 for i in a:
@@ -159,9 +216,19 @@ for i in a:
     else:
         print str(i)+' other'
 </pre>
+	這邊特別注意到其實在a數列中1是同時符合i&lt;2以及i&lt;4的條件，但是這邊程式只顯示符合i&lt;2的結果。這是因為我們設定i&lt;4這個條件是用elif，也就是else if，也就是不符合先前條件且符合elif設定的條件的時候就執行code，如果前面條件符合的話就不執行。而如果有要顯示「1 matches condition2」的話，就把elif i&lt;4:改為if i&lt;4:就行了。<br><br>
+
+
     <li><h3>作業</h3></li>
     <ol>
     	<li>用def製作一個可以計算組合數的function
+<pre>
+hint:以下的程式碼可以達到階層的效果
+x=1
+for i in range(5):
+	x=x*i
+
+</pre>
         <li>用scipy.misc這個library中的comb這個function，確認上一題的function是可行的(測試C5取2就好)
         <li>找出1~100中，2的倍數和3的倍數各有幾個
     </ol>
