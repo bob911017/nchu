@@ -33,8 +33,9 @@ edited by 陳柏因
       <li><a href="#c" STYLE="text-decoration:none">2017/03/03</a>
       <ul>
           <li><a href="#c1" STYLE="text-decoration:none">function and library</a>
-          <li><a href="#c2" STYLE="text-decoration:none">true and faulse</a>
-          <li><a href="#c3" STYLE="text-decoration:none">條件語句</a>
+           <li><a href="#c2" STYLE="text-decoration:none">常用的library</a>
+          <li><a href="#c3" STYLE="text-decoration:none">true and faulse</a>
+          <li><a href="#c4" STYLE="text-decoration:none">條件語句</a>
       </ul>
   </h5></ul>
   </td>
@@ -42,11 +43,11 @@ edited by 陳柏因
 <hr>
 <h2>更新內容</h2>
 <ul>
+	<li><b>2017/03/06_11:30:新增常用的library</b></li>
 	<li><b>2017/03/03_11:03: 2017/03/03內容更新</b>
 	<li><b>2017/03/03_11:03: 前言新增'成績分配與作業繳交'、'做作業的注意事項'和'計算程式執行的時間'部分</b>
 	<li><b>2017/03/03_09:36: Using Python20170227.pptx檔案更新已上傳至ecampus</b>
-    <li><b>2017/03/03_09:36: Using Python20170303.pptx檔案已上傳至ecampus</b>
-    <li><b>2017/03/02_18:52:新增3/3標題、部分程式碼及作業</b></li>
+    <li><b>2017/03/03_09:36: Using Python20170303.pptx檔案已上傳至ecampus</b>   
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
@@ -186,9 +187,62 @@ for t in range(5):
 		這種引入方式就是直接從函式庫中引入所需的函式，可以簡單的只打pi就直接使用pi這個函式，也不會造成像上一種方法一樣，必須讓電腦去找函式在哪個函式庫中，表示的形式如下<br><br>
 		from numpy import pi,sin<br>
 		a=sin(pi/2)<br><br>
+        
 	</ol>
 	</ol>
-    <li><h3><a name="c2">true and faulse</a></h3></li>
+    <li><h3><a name="c2">常用的library</a></h3></li>
+    <ol>
+    <li><h4>numpy</h4></li>
+    <table border=1>
+			<td><b>功能</b></td>
+			<td><b>範例</b></td>
+			<tr>
+			<td>全零數列</td>
+			<td>np.zeros(2)</td>
+            <tr>
+			<td>全一數列</td>
+			<td>np.ones(3)</td>
+			<tr>
+			<td>全零矩陣</td>
+			<td>np.zeros((2,2))</td>
+			<tr>
+			<td>呼叫矩陣中的元素</td>
+			<td>a[0,0]</td>
+			<tr>
+			<td>呼叫所有行</td>
+			<td>a[:,0]</td>
+			<tr>
+			<td>呼叫所有列</td>
+			<td>a[0,:]</td>
+			<tr>
+			<td>開根號</td>
+			<td>np.sqrt(5)</td>
+            <tr>
+			<td>新增元素</td>
+			<td>np.append(a,0)</td>
+            <tr>
+            
+			<td>重排</td>
+			<td>a.reshape((3,2))</td>
+			<tr>
+            <td>π</td>
+			<td>np.pi</td>
+		</table>
+    <li><h4>隨機數(<a href='https://docs.python.org/2/library/random.html' STYLE="text-decoration:none" target="_blank">random</a>)</h4></li>
+    <ul>
+		<li><h4>產生隨機數</h4></li>
+		import random as rd<br>
+		r=rd.random()<br><br>
+		<li><h4>洗牌</h4></li>
+		import random as rd<br>
+		a=range(10)<br>
+		rd.shuffle(a)<br><br>
+		<li><h4>隨機矩陣</h4></li>
+		import <a href='https://docs.scipy.org/doc/numpy/reference/routines.random.html' STYLE="text-decoration:none" target="_blank">numpy.random</a> as nrd<br>
+		r=nrd.random((5,5))<br><br>
+	</ul>
+    </ol>
+    <li><h3><a name="c3">true and faulse</a></h3></li>
     判斷條件是通過判斷一個或多個語句的結果，並輸出True或False。判斷式中大概包含等於(==)、不等於(!=)、大於(>)、小於(&lt;)和大於等於(&gt;=)等種類。<br>
 	當符合判斷式條件的時候，Python會給出True的回應，反之則為False。大家可以用以下程式碼進行嘗試<br><br>
 	程式碼<br>
@@ -200,10 +254,8 @@ for t in range(5):
 	另外如果有多個條件的話，則可以使用聯集(or)或是交集(and)的概念，範例如下<br><br>
 	print 1==1 or 1!=1<br><br>
 	結果為<br>
-	True<br><br>
-    
-    
-    <li><h3><a name="c3">條件語句</a></h3></li>
+	True<br><br>    
+    <li><h3><a name="c4">條件語句</a></h3></li>
     條件語句指的是假設一些條件，符合條件(True)就執行code，不符合(False)就不執行。設定的條件可以不只一個，以下做個範例:<br><br>
 	程式碼<br>
 <pre>
