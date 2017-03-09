@@ -37,30 +37,42 @@ edited by 陳柏因
           <li><a href="#c3" STYLE="text-decoration:none">true and faulse</a>
           <li><a href="#c4" STYLE="text-decoration:none">條件語句</a>
       </ul>
+      <li><a href="#d" STYLE="text-decoration:none">2017/03/10</a>
+      <ul>
+          <li><a href="#c1" STYLE="text-decoration:none">while語句</a>
+           <li><a href="#c2" STYLE="text-decoration:none">使用者輸入</a>
+          <li><a href="#c3" STYLE="text-decoration:none">時間(time)</a>
+      </ul>
   </h5></ul>
   </td>
 </table>
 <hr>
 <h2>更新內容</h2>
 <ul>
+	<li><b>2017/10/09_14:27:更新成績分配與作業繳交內容，並新增03/10的部分內容</b></li>
 	<li><b>2017/03/06_11:30:新增常用的library</b></li>
 	<li><b>2017/03/03_11:03: 2017/03/03內容更新</b>
 	<li><b>2017/03/03_11:03: 前言新增'成績分配與作業繳交'、'做作業的注意事項'和'計算程式執行的時間'部分</b>
-	<li><b>2017/03/03_09:36: Using Python20170227.pptx檔案更新已上傳至ecampus</b>
-    <li><b>2017/03/03_09:36: Using Python20170303.pptx檔案已上傳至ecampus</b>   
+	<li><b>2017/03/03_09:36: Using Python20170227.pptx檔案更新已上傳至ecampus</b>  
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
 <p title='注意事項'>※這個網站是提供給有修中興普通物理學的學生，學習python2.7.10版的參考資料使用。我會盡量把每次上課的內容都整理在這個網誌裡。上課我會用PPT和<a href='https://bob911017.github.io/learncode/python.html' target="_blank" ><b>個人網頁</b></a>搭配使用。這算是我第一次教課，上課的速度如果太快或是聽不懂我在說什麼的話，請多包涵，之後也可以跟我反應。課堂外要聯絡我就用<a href='https://www.facebook.com/bob.chen.37051'STYLE="text-decoration:none" target="_blank" ><b>facebook</b></a>吧~</p>
 <p>學python的理由，我想老師大概上課都說明了。對我而言因為我不必進行系統的維護，所以python大概就只是一個可以幫我做運算、整理數據或是做圖之類的工具。這個課大概只有6週的時間，所以只會說明一些基本的東西和程式碼編寫的概念，後面各位要製作專題的時候，應該會用到不少課堂上沒教過的指令，這些可能就要自己上網查詢怎麼使用或是問助教。</p>
 <h3>成績分配與作業繳交</h3>
-<p title='成績分配與作業繳交'>作業10分和期末專題5分，共佔總成績15分<br>
-作業請在隔週上課之前交，交上程式碼.py檔，至助教陳師漢的信箱(citrus2717@gmail.com)。<br>
-作業的檔案命名為410XXXXXXX(自己學號)+姓名-?.py，如「<b>4102054036陳柏因-1.py</b>」，郵件的主旨請打python_作業?，「<b>python_作業一</b>」</p>
+<ol>
+	<li>作業10分和期末專題5分，共佔總成績15分
+    <li>作業繳交狀況<a href='https://docs.google.com/spreadsheets/d/1CUWLqS1_eZKtu5TZ9ElulAUO1uRBWp9hOa0E9a71FEA/edit?usp=sharing' target="_blank"STYLE="text-decoration:none" ><b>連結</b></a>，如果有誤跟助教聯絡
+    <li>程式執行的時間<b>不得大於60秒</b>，依情況做調整
+	<li>作業請在隔週上課之前交，交上程式碼.py檔，至助教陳師漢的信箱(citrus2717@gmail.com)。
+	<li>作業的檔案命名為410XXXXXXX(自己學號)+姓名-?.py，如「<b>4102054036陳柏因-1.py</b>」
+	<li>郵件的主旨請打python_作業?，「<b>python_作業一</b>」
+    <li>違反以上幾點造成助教不便者，後果自負
+</ol>
 
 <h3>做作業的注意事項</h3>
 基本上作業有問題都可以找助教討論，但請盡量不要直接說不會，或是甩一大串程式碼過來，然後說「程式怎麼跑不動?」，這樣我們會不知道怎麼引導各位思考。建議是還不習慣編寫程式的人可以使用<a href="#b3" STYLE="text-decoration:none">附註</a>的功能，標示自己到底寫了什麼，想一下為什麼程式是如何運行的。如果這樣還是不行的話，請盡快聯絡助教，幫你們debug。<br>
-這裡可以看一下個未繳交作業的狀況，如果有誤再跟助教聯絡:<a href='https://docs.google.com/spreadsheets/d/1CUWLqS1_eZKtu5TZ9ElulAUO1uRBWp9hOa0E9a71FEA/edit?usp=sharing' target="_blank"STYLE="text-decoration:none" ><b>連結</b></a>
+
 
 <h3>計算程式執行的時間</h3>
 由於第一次作業有部分的人製作出來的程式碼執行的時間過久，造成助教閱讀上的負擔。因此這邊教一下如何使用計算程式執行時間的function。如果想了解內部怎麼運作可以自己google或找助教。請以後交上來的功課都要附上程式運行的時間，<b>輸出的時間不得大於60</b>，會依情況做調整。<br>
@@ -284,6 +296,21 @@ for i in range(1,5):
         <li>用scipy.misc這個library中的comb這個function，確認上一題的function是可行的(測試C5取2就好)
         <li>找出1~100中，2的倍數和3的倍數各有幾個
     </ol>
+</ul>
+
+<hr>
+<h2><a name="d">2017/03/10</a></h2>
+<ul>
+	<li><h3><a name="d1">while語句</a></h3></li>
+    <li><h3><a name="d2">使用者輸入</a></h3></li>
+    <li><h3><a name="d3">時間(<a href='https://docs.python.org/2/library/time.html' STYLE="text-decoration:none" target="_blank">time</a>)</a></h3></li>
+    <li><h3>Homework</h3></li>
+    製作一款在30秒內，猜一個小於100的數字的遊戲。
+<pre>hint:
+t=time.clock()可計算時間
+n=random.randrange(1,100,1)會隨機產生一個在一到一百之間數
+break能中止while的進行
+</pre>
 </ul>
 </body>
 </html>
