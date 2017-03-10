@@ -39,7 +39,7 @@ edited by 陳柏因
       </ul>
       <li><a href="#d" STYLE="text-decoration:none">2017/03/10</a>
       <ul>
-          <li><a href="#c1" STYLE="text-decoration:none">while語句</a>
+          <li><a href="#c1" STYLE="text-decoration:none">條件循環(while)</a>
            <li><a href="#c2" STYLE="text-decoration:none">使用者輸入</a>
           <li><a href="#c3" STYLE="text-decoration:none">時間(time)</a>
       </ul>
@@ -49,11 +49,11 @@ edited by 陳柏因
 <hr>
 <h2>更新內容</h2>
 <ul>
-	<li><b>2017/10/09_14:27:更新成績分配與作業繳交內容，並新增03/10的部分內容</b></li>
-	<li><b>2017/03/06_11:30:新增常用的library</b></li>
+	<li><b>2017/03/10_11:05: 2017/03/10內容更新</b>
+	<li><b>2017/03/10_11:05: Using Python20170310.pptx檔案已上傳至ecampus</b> 
+	<li><b>2017/03/09_14:27: 更新成績分配與作業繳交內容，並新增03/10的部分內容</b></li>
+	<li><b>2017/03/06_11:30: 新增常用的library</b></li>
 	<li><b>2017/03/03_11:03: 2017/03/03內容更新</b>
-	<li><b>2017/03/03_11:03: 前言新增'成績分配與作業繳交'、'做作業的注意事項'和'計算程式執行的時間'部分</b>
-	<li><b>2017/03/03_09:36: Using Python20170227.pptx檔案更新已上傳至ecampus</b>  
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
@@ -301,15 +301,75 @@ for i in range(1,5):
 <hr>
 <h2><a name="d">2017/03/10</a></h2>
 <ul>
-	<li><h3><a name="d1">while語句</a></h3></li>
+	<li><h3><a name="d1">條件循環(while)</a></h3></li>
+    while語句使用上有點像條件語句結合for迴圈。以下為範例<br><br>
+	程式碼<br>
+	i=0<br>
+	while i&lt;3:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;print i<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;i=i+1 <br><br>
+	輸出為<br>
+	0<br>
+	1<br>
+	2<br><br>
+	這組code表示的是當條件i&lt;3符合的時候，就執行print 和i=i+1，一直執行到條件不符合i&lt;3的時候就跳出while之外，執行下一步程式碼。<br><br>
     <li><h3><a name="d2">使用者輸入</a></h3></li>
+    使用者輸入這個指令可以依據使用者輸入的資料，讓程式進行相應的動作，其中指令分為兩類，一個是輸入數字或字串等的input()，一個是將所有輸入值轉為字串的raw_input()，使用範例如下:<br><br>
+	<ul>
+		<li><h4>input程式碼</h4></li>
+		a=input('type anything: ')<br>
+		print a,type(a)<br>
+		使用方法及結果如圖<br>
+		<a href="https://scontent-tpe1-1.xx.fbcdn.net/v/t31.0-8/15440344_1053675074741861_8285242432193006478_o.jpg?oh=d926bf1d665f8a1ceb3ae0a7ea28346a&oe=58F1A9AC" STYLE="text-decoration:none" target="_blank"><img src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/15590177_1061359727306729_1717516064027129104_n.jpg?oh=82705140cc471df6994b3f49433fd4aa&oe=58F5F64A"></a><br><br>
+		點擊綠色框框的區塊，使用者就能給a一個數值(int, float...)或是字串(string)了<br><br>
+		另一方面，使用指令raw_input的話，不管輸入的東西是哪一種，他都會將這些東西轉成字串。範例如下:<br><br>
+		<li><h4>raw_input程式碼</h4></li>
+		a=raw_input('type anything: ')<br>
+		print a,type(a)<br>
+		輸入<br> 
+		4<br>
+		輸出為<br>
+		4 &lt;type 'str'&gt;<br><br>
+	</ul>
+
     <li><h3><a name="d3">時間(<a href='https://docs.python.org/2/library/time.html' STYLE="text-decoration:none" target="_blank">time</a>)</a></h3></li>
+    time是一個提供各種與時間相關的function(函式)的library(函式庫)，可用來記錄程式碼執行的時間，輸出的數字為以秒當作單位。
+    <ul>
+        <li><h4>用clock function計時</h4></li>
+            clock這個函式紀錄的是從程式開始運行後經過的時間，輸出的是以秒為單位，type為float的資料，以下為使用範例<br><br>
+            import time as t<br>
+            tstart=t.clock()<br>
+            要執行的程式碼<br>
+            tend=t.clock()<br>
+            print 'The program takes '+str(tend-tstart)+' seconds.'<br><br>
+        <li><h4>用time function計時</h4></li>
+        	使用time來計時基本上和使用clock相同。不同的點在於function定義0s的時間。clock定義程式開始執行的時候為0s，time則定義該版本(本版本為4.9.10的python)發布的時間為0s。
+    </ul>    
     <li><h3>Homework</h3></li>
-    製作一款在30秒內，猜一個小於100的數字的遊戲。
-<pre>hint:
-t=time.clock()可計算時間
-n=random.randrange(1,100,1)會隨機產生一個在一到一百之間數
+    製作一款在30秒內，猜一個小於100的數字的遊戲。<br><br>
+    <b>功能包含:</b>
+    <ol>
+    	<li>計時30s。超時程式就結束
+        <li>產生隨機數給玩家猜
+        <li>猜到數後，程式就會結束
+    </ol><br><br>
+<b>hint1:</b><pre>
+t=time.clock()可計錄程式執行的時間
+n=random.randrange(1,100,1)會隨機產生一個在一到一百之間，以一為公差的數
 break能中止while的進行
+</pre>
+<b>hint2(可用可不用):</b>
+關於input括號內的字，由於預設編碼的關係，只能顯示英文字的，如果使用中文的話會顯示亂碼。<br>
+因此如果想要使用中文的話，可以在字串旁篇加上一個u，將編碼切換成能支援中文的編碼─unicode。<br><br>
+例如:<br>
+a=input(u'哈囉')<br><br>
+<b>hint3(可加可不加):</b><br>
+程式執行完畢或是出現錯誤的時候，py檔通常是直接關閉了!<br>
+因此如果想保留畫面顯示遊戲結果的話，可以利用以下指令<br>
+<pre>
+q=0
+while q==0:
+	q=raw_input('Input any key to quit: ')
 </pre>
 </ul>
 </body>
