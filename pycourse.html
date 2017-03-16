@@ -384,8 +384,37 @@ while q==0:
 <h2><a name="e">2017/03/17</a></h2>
 <ul>
     <li><h3><a name="e1">Matrix(矩陣)運算</a></h3></li>
-    <li><h3><a name="e2">作圖</a></h3></li>
+    <li><h3><a name="e2">作圖</a></h3></li>  
+    <pre>
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.arange(0,10,0.1)
+y=x**3
+plt.plot(x,y,'-o', color=[0.2,0.6,0.4],label='y=x**3')
+plt.xlabel('x label')
+plt.ylabel('y label')
+plt.legend()
+plt.show()
+    </pre>
     <li><h3><a name="e3">解ODE(常微分方程)</a></h3></li>
+    <pre>
+import scipy.integrate as sci
+import numpy as np
+import matplotlib.pyplot as plt
+m=5 #(kg)
+k=2 #(N/m)
+c=1.5 #(Ns/m)
+ic=[0,5] #initial condition=[x0(m),v0(m/s)]
+
+def fun(inp,t):
+    #x0=inp[0],v0=inp[1]
+    out=[inp[1],(-c*inp[1]-k*inp[0])/m]  #out=[x',x'']
+    return out
+
+t=np.linspace(0.0,30.0,101) #(second)
+x=sci.odeint(fun,ic,t)  #sci.odeint(function,intitial condition)
+plt.plot(t,x[:,0]) #x-t graph
+    </pre>
     <li><h3>Homework</h3></li>
     <ul>
     	<li>用python畫出下圖</li>
