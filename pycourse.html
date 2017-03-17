@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +48,7 @@ edited by 陳柏因
       <ul>
           <li><a href="#e1" STYLE="text-decoration:none">Matrix(矩陣)運算</a>
           <li><a href="#e2" STYLE="text-decoration:none">作圖</a>
-          <li><a href="#e3" STYLE="text-decoration:none">解ODE(常微分方程)</a>
+          <li><a href="#e3" STYLE="text-decoration:none">解ODE常微分方程</a>
       </ul>
   </h5></ul>
   </td>
@@ -55,12 +56,11 @@ edited by 陳柏因
 <hr>
 <h2>更新內容</h2>
 <ul>
+	<li><b>2017/03/17_11:05: 2017/03/17內容更新</b>
+    <li><b>2017/03/17_11:05: Using Python20170317.pptx檔案已上傳至ecampus</b> 
 	<li><b>2017/03/16_15:38: 2017/03/17內容新增</b>
 	<li><b>2017/03/10_11:05: 2017/03/10內容更新</b>
 	<li><b>2017/03/10_11:05: Using Python20170310.pptx檔案已上傳至ecampus</b> 
-	<li><b>2017/03/09_14:27: 更新成績分配與作業繳交內容，並新增03/10的部分內容</b></li>
-	<li><b>2017/03/06_11:30: 新增常用的library</b></li>
-	<li><b>2017/03/03_11:03: 2017/03/03內容更新</b>
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
@@ -384,23 +384,105 @@ while q==0:
 <h2><a name="e">2017/03/17</a></h2>
 <ul>
     <li><h3><a name="e1">Matrix(矩陣)運算</a></h3></li>
+    <ul>
+		<li><h4>矩陣運算</h4></li>
+		矩陣的運算有兩種指令來運算，一種是把直接建立矩陣來運算，範例如下<br><br>
+		import numpy as np<br>
+		a=np.matrix([[1,2],[3,4]])<br>			
+		b=np.matrix([[1,2],[3,4]])<br>
+		c=a*b<br>
+		print c<br><br>
+		另一種方式是建立一個array後再用dot的指令進行矩陣運算。範例如下<br><br>
+		import numpy as np<br>
+		x=np.array([[1,2],[3,4]])<br>
+		y=np.array([[1,2],[3,4]])<br>
+		z1=x*y<br>
+		z2=np.dot(x,y)<br>
+		print 'z1='<br>
+		print z1<br>
+		print 'z2='<br>
+		print z2<br><br>
+
+		由範例的結果z1和z2我們可以觀察到，前者不使用dot的指令進行相乘的話，僅只有對應位置的元素相乘，而非我們所理解的矩陣乘法。當如後者使用dot的指令進行運算的話則為一般的矩陣運算。
+
+		<li><h4>其他矩陣相關工具(<a href="https://docs.scipy.org/doc/numpy/reference/routines.linalg.html" STYLE="text-decoration:none" target="_blank">Linear algebra</a>)</h4></li>
+		取行列式值<br>
+		np.linalg.det(a)<br><br>
+		取反矩陣<br>
+		np.linalg.inv(a)<br><br>
+        全零矩陣<br>
+        np.zeros((2,2))<br><br>
+        全一矩陣<br>
+        np.ones((2,2))<br><br>
+        對角矩陣<br>
+        np.eye(2)<br><br>
+        呼叫所有行<br>
+        a[:,0]<br><br>
+        呼叫所有列<br>
+        a[0,:]<br><br>
+	</ul>
     <li><h3><a name="e2">作圖</a></h3></li>  
-    <pre>
-import numpy as np
-import matplotlib.pyplot as plt
-x=np.arange(0,10,0.1)
-y=x**3
-plt.plot(x,y,'-o', color=[0.2,0.6,0.4],label='y=x**3')
-plt.xlabel('x label')
-plt.ylabel('y label')
-plt.legend()
-plt.show()
-    </pre>
-    <li><h3><a name="e3">解ODE(常微分方程)</a></h3></li>
+    靜圖的函式庫主要是使用<a href="http://matplotlib.org/gallery.html" STYLE="text-decoration:none" target="_blank">matplotlib</a>這個函式庫。首先將函式庫引入<br><br>
+	import matplotlib.pyplot as plt<br><br>
+	接著如果要畫一個2D圖的話，我們需要先建立兩個長度相同的數列，如<br><br>
+	x=[1,2,3,4]<br>
+	y=[4,5,2,3]<br><br>
+	這兩個數列代表著2D圖上的每一個x座標與y座標，跟excel畫圖有類似。畫圖方式如下<br><br>
+	plt.plot(x,y,'-o',label="note")<br>
+	plt.legend()<br>
+	plt.show()<br><br>
+	第一條指令裡的第一和第二個元素代表x座標與y座標，第三個元素代表畫線的方式是用圓圈標示點並用線相連，第四個元素代表這條線的標籤(圖中右上角那個框框中的東西)。
+	而為了要在圖中建立右上角那個框框，我們需要使用第二條指令來建立<br><br>
+
+	plt.xlabel('xlabel')<br>
+	plt.ylabel('ylabel')<br><br>
+	這樣你在括號中打的字串就會出現在圖中的座標軸旁邊了!<br><br>
+
+	<h3>靜圖相關函式</h3>
+	<ul>
+		<li><h4>plt.plot()的可添加功能</h4></li>
+		<table border=1>
+			<td><b>功能</b></td>
+			<td><b>範例</b></td>
+			<tr>
+			<td>連結資料點的圖案</td>
+			<td>'-o'</td>
+			<tr>
+			<td>資料線或點的顏色</td>
+			<td>color=[0.2,0.3,0.4]</td>
+			<tr>
+			<td>資料標籤</td>
+			<td>label='string'</td>
+		</table>
+		<li><h4>標示坐標軸</h4></li>
+		plt.xlabel('string')<br>
+		plt.ylabel('string')<br>
+		<li><h4>分割視窗</h4></li>
+		假設要畫六張圖，分布為上下兩張圖左右三張圖的排列方式: ( 2 x 3 )<br><br>
+		<table border="1" >
+			<td>(1)</td>
+			<td>(2)</td>
+			<td>(3)</td>
+			<tr>
+			<td>(4)</td>
+			<td>(5)</td>
+			<td>(6)</td>
+			<tr>
+		</table><br>
+		如果要畫第(5)張圖的位置輸入<b>plt.subplot(235)</b>
+        <li><h4>儲存圖片</h4></li>
+        plt.savefig('檔案名.png')
+	</ul>
+    
+    <li><h3><a name="e3">解ODE常微分方程(函式庫: <a href="https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.integrate.odeint.html#scipy.integrate.odeint" STYLE="text-decoration:none" target="_blank">scipy.integrate.odeint</a>)</a></h3></li>
+    範例:解&nbsp;&nbsp;-cv-kx=ma，阻尼力+彈力=合力<br>
+    v= x'= x對時間一次微分項，a= x''= x對時間二次微分項<br><br>
+    使用上首先就是給定初始條件。例如說如果解到二次微分項的話，一次和零次微分項的初始值。接著準備一個function，輸入的值包含初始條件以及要計算的時間範圍，要回傳的值則是一次微分以及二次微分項。最後開始計算時，先令一個時間範圍，使用odeint()這個function，括號內依序置入剛剛設定的function、初始條件以及時間。<br><br>
     <pre>
 import scipy.integrate as sci
 import numpy as np
 import matplotlib.pyplot as plt
+
 m=5 #(kg)
 k=2 #(N/m)
 c=1.5 #(Ns/m)
@@ -412,13 +494,20 @@ def fun(inp,t):
     return out
 
 t=np.linspace(0.0,30.0,101) #(second)
-x=sci.odeint(fun,ic,t)  #sci.odeint(function,intitial condition)
+x=sci.odeint(fun,ic,t)  #sci.odeint(function,intitial condition,time)
 plt.plot(t,x[:,0]) #x-t graph
     </pre>
+    最後輸出的x會是一個2 X n的陣列。第0行x[:,0]代表的是每個時間點的位置，第1行x[:,1]則代表的是每個時間點的速度。
     <li><h3>Homework</h3></li>
     <ul>
     	<li>用python畫出下圖</li>
         <img src="./leaf.png"width=10% height=10%><br>
+        <b>hint1:</b><br>
+        因為這題作業進行的迴圈數有5000多次，因此程式在運行上會稍微慢一點正常的現象<br><br>
+        <b>hint2:</b><br>
+        在使用if的時候，千萬不要像平常數學上使用的2&lt;x&lt;3直接丟入條件語句裡，雖然程式上是可以解讀的，但跟他的概念是先判斷2&lt;x的結果，例如說是True，接著變成判斷True&lt;3，得到結果True，這樣的結果。因此為了避免這種狀況發生，請使用聯集(&amp;)的功能
+        <br>如if 2&lt;x &amp; x&lt;3:。<br><br>
+        
         參考參數:<br>
         <img src="./parameter.png"width=25% height=25%><br><br>
         <li>解二維座標下-cv<sub>r</sub>-kr=ma<sub>r</sub></li>
@@ -428,7 +517,7 @@ plt.plot(t,x[:,0]) #x-t graph
         k<sub>x</sub>=2.0Ns/m<br>
         k<sub>y</sub>=1.5Ns/m<br>
         起始位置座標為(0,0)m，起始速度為(10,10)m/s<br>
-        畫出從0到30秒間，此點的行經路徑
+        畫出從0到30秒間，此點的行經路徑，即各時間點y位置對x位置的圖。
     </ul>
 </ul>
 
