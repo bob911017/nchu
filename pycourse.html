@@ -51,7 +51,7 @@ edited by 陳柏因
   </td>
 </table>
 <hr>
-<h2>更新內容</h2>
+<h2>重要更新內容</h2>
 <ul>
 	<li><b>2017/03/17_11:05: 2017/03/17內容更新</b>
     <li><b>2017/03/17_11:05: Using Python20170317.pptx檔案已上傳至ecampus</b> 
@@ -497,7 +497,7 @@ plt.plot(t,x[:,0]) #x-t graph
     最後輸出的x會是一個2 X n的陣列。第0行x[:,0]代表的是每個時間點的位置，第1行x[:,1]則代表的是每個時間點的速度。
     <li><h3>Homework</h3></li>
     <ul>
-    	<li>用python畫出下圖</li>
+    	<li><b>用python畫出下圖</b></li>
         <img src="./leaf.png"width=10% height=10%><br>
 	此圖形的相關資料:「<a href="http://boson4.phys.tku.edu.tw/high_school/unit_fractals.htm"STYLE="text-decoration:none" target="_blank">碎形介紹</a>」,「<a href="http://ecademy.agnesscott.edu/~lriddle/ifs/ifs.htm"STYLE="text-decoration:none" target="_blank">疊代函數系統IFS</a>」,「<a href="http://www.fractalartcontests.com/2006/entries.php
 "STYLE="text-decoration:none" target="_blank">ICM 2006 Benoit Mandelbrot 碎形藝術競賽</a>」<br><br> 
@@ -509,14 +509,40 @@ plt.plot(t,x[:,0]) #x-t graph
         
         參考參數:<br>
         <img src="./parameter.png"width=25% height=25%><br><br>
-        <li>解二維座標下-cv<sub>r</sub>-kr=ma<sub>r</sub></li>
+        <li><b>解二維座標下-cv<sub>r</sub>-kr=ma<sub>r</sub></b></li><br>
         m=5kg<br>
         c<sub>x</sub>=1.5Ns/m<br>
         c<sub>y</sub>=2.0Ns/m<br>
         k<sub>x</sub>=2.0Ns/m<br>
         k<sub>y</sub>=1.5Ns/m<br>
         起始位置座標為(0,0)m，起始速度為(10,10)m/s<br>
-        畫出從0到30秒間，此點的行經路徑，即各時間點y位置對x位置的圖。
+        畫出從0到30秒間，此點的行經路徑，即各時間點y位置對x位置的圖。<br><br>
+        
+        <li><b>補充(非作業，看看就好):</b></li><br>
+        不同於作業一的IFS製作碎形圖，此種製圖方法是使用<a href="https://www.youtube.com/watch?v=Quw4ZHLH2CY"STYLE="text-decoration:none" target="_blank">牛頓法</a>製作。範例中為以牛頓法在複數空間下解z<sup>3</sup>-1=0這條方程式，並以不同顏色標示每個猜解的點最後收斂在此方程式的各個解。<br>
+        <b>注意:</b>以下程式碼運算量極大(跑圖的時候看起來當掉的那種)，要嘗試的人可以先把所有np.arange(-1,1,0.015)改用np.arange(-1,1,0.02)做測試。<br><br>
+        
+        <pre>
+import matplotlib.pyplot as plt
+import numpy as np
+for i in np.arange(-1,1,0.015):
+    for j in np.arange(-1,1,0.015):    
+        n=complex(i,j)
+        erro=1
+        x=n       
+        while erro>1e-4:
+            xn=x-( (x**3)-1 )/(3*(x**2))
+            erro=abs(xn-x)
+            x=xn
+        if abs(x-complex(1,0))&lt;1e-3:
+            c='red'
+        if abs(x-complex(-0.5,np.sqrt(3.0/4)))&lt;1e-3:
+            c='yellow'
+        if abs(x-complex(-0.5,-np.sqrt(3.0/4)))&lt;1e-3:
+            c='blue'
+        plt.plot(n.real,n.imag,'.',color=c)
+plt.show()
+        </pre>
     </ul>
 </ul>
 
