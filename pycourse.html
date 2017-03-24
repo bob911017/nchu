@@ -47,17 +47,18 @@ edited by 陳柏因
           <li><a href="#e2" STYLE="text-decoration:none">作圖</a>
           <li><a href="#e3" STYLE="text-decoration:none">解ODE常微分方程</a>
       </ul>
+      <li><a href="#f" STYLE="text-decoration:none">2017/03/24</a>
   </h5></ul>
   </td>
 </table>
 <hr>
 <h2>重要更新內容</h2>
 <ul>
+	<li><b>2017/03/24_10:50: 2017/03/24內容更新</b>
+	<li><b>2017/03/24_10:50: VPYTHON_教學.pptx檔案已上傳至ecampus</b> 
 	<li><b>2017/03/17_11:05: 2017/03/17內容更新</b>
     <li><b>2017/03/17_11:05: Using Python20170317.pptx檔案已上傳至ecampus</b> 
 	<li><b>2017/03/16_15:38: 2017/03/17內容新增</b>
-	<li><b>2017/03/10_11:05: 2017/03/10內容更新</b>
-	<li><b>2017/03/10_11:05: Using Python20170310.pptx檔案已上傳至ecampus</b> 
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
@@ -550,6 +551,108 @@ plt.show()
 </ul>
 
 <hr>
+
+<h2><a name="f">2017/03/24</a></h2>
+要學習Vpython要怎麼用的話，基本上可以參考<b><a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">Vpython</a>、<a href="http://www.glowscript.org/docs/VPythonDocs/index.html" STYLE="text-decoration:none" target="_blank">Vpython Help</a>和<a href="http://tcjd71.wixsite.com/vpython" STYLE="text-decoration:none" target="_blank">VPhysics NTU</a></b>這些網站就好。裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。<br>
+<ul>
+	<li><h3>上課講義</h3></li>
+    <pre>
+from visual import *
+
+'''
+ball=sphere()
+ball.color=color.red
+ball.pos=(-5,0,0)
+ball.radius=0.5
+'''
+'''
+wall = box()
+wall.color = color.green
+wall.size = (0.2,4,4)
+wall.pos=(6,0,0)
+'''
+'''
+v1 = vector(1,2,3)
+v2 = vector(2,1,5)
+print v1.x,v1.y,v1.z
+'''
+'''
+ball=sphere()
+ball.pos=(-5,0,0)
+ball.radius=0.5
+
+wall1 = box()
+wall1.color = color.green
+wall1.size = (0.2,4,4)
+wall1.pos=(6,0,0)
+
+wall2 = box()
+wall2.color = color.green
+wall2.size = (0.2,4,4)
+wall2.pos=(-6,0,0)
+
+
+
+ball.velocity = vector(2,0,0)
+while (1==1):
+    rate(100)
+    dt = 0.05
+    ball.pos = ball.pos + ball.velocity*dt
+    if ball.x &gt; wall1.x: 
+        ball.velocity.x = -ball.velocity.x
+    if ball.x &lt; wall2.x: 
+        ball.velocity.x = -ball.velocity.x
+'''
+#sphere()    
+#box() 
+#cylinder()
+#arrow()
+#ellipsoid()
+#helix()
+
+#sphere(pos=(-1,0,0),radius=0.5,color=color.green)
+#arrow(pos=(-1,0,0),axis=(+1,+3,0),color=color.red)
+
+
+#c=curve(pos=(1, 0, 0))
+#for i in arange(0, 10, 0.1):
+#    c.append(pos=(cos(i), sin(i), i))
+
+#c = gcurve()
+#for i in arange(0, 10, 0.1):
+#    c.plot(pos = (i, cos(i)))
+</pre>    
+  <li><h3>二維碰撞</h3></li>
+  <pre>
+from visual import *
+size = 0.1          
+
+scene = display(width=800, height=800,  background=(0.5,0.5,0))             	
+b1 = sphere(radius = size,  color=color.yellow)         				
+b2 = sphere(radius = size,  color=color.green)          				
+
+b1.pos = vector( 0.6 , 0.1, 0)                        	
+b2.pos = vector( 0 , 0 , 0)                           	
+b1.v = vector(-0.2, 0, 0)                              	
+b2.v = vector(0 , 0, 0)                                	
+
+dt = 0.001                                                          
+while True:
+    rate(1000)
+					
+    b1.pos += b1.v * dt 
+    b2.pos += b2.v * dt
+
+    if abs(b1.pos - b2.pos)&gt;=2*size and dot(b1.v, b2.v) &gt;= 0 :
+        v1prime = b1.v - (b1.pos-b2.pos)  * dot (b1.v-b2.v, b1.pos-b2.pos) / abs(b1.pos-b2.pos)**2
+        v2prime = b2.v - (b2.pos-b1.pos)  * dot (b2.v-b1.v, b2.pos-b1.pos) / abs(b2.pos-b1.pos)**2
+        b1.v, b2.v = v1prime, v2prime
+	</pre>
+	<li><h3>Homework</h3></li>
+    1.試著改動二維碰撞中的參數，runrun看哪裡不一樣<br>
+	2.將二維碰撞程式碼用”#”註解<br>
+
+</ul>
 
 </body>
 </html>
