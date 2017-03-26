@@ -31,15 +31,17 @@ edited by 陳柏因
       </ul>
       <li><a href="#c" STYLE="text-decoration:none">標示工具</a>
       <ul>
-          <li><a href="#c1" STYLE="text-decoration:none">曲線</a>
-	  <li><a href="#c2" STYLE="text-decoration:none">標籤</a>
-	  <li><a href="#c3" STYLE="text-decoration:none">點</a>
-	  <li><a href="#c4" STYLE="text-decoration:none">光線</a>
+          <li><a href="#c1" STYLE="text-decoration:none">行進軌跡</a>
+          <li><a href="#c2" STYLE="text-decoration:none">標籤</a>
+          <li><a href="#c3" STYLE="text-decoration:none">點</a>
+          <li><a href="#c4" STYLE="text-decoration:none">光線</a>
+          <li><a href="#c5" STYLE="text-decoration:none">曲線</a>
       </ul>
       <li><a href="#d" STYLE="text-decoration:none">常用參數介紹</a>
       <ul>
           <li><a href="#d1" STYLE="text-decoration:none">材質</a>
           <li><a href="#d2" STYLE="text-decoration:none">顏色與不透明度</a>
+          <li><a href="#d3" STYLE="text-decoration:none">向量</a>
       </ul>
   </h5></ul>
   </td>
@@ -51,9 +53,7 @@ edited by 陳柏因
     <li><b>參數使用方法</b><br>
     舉例來說，當要使用arrow這個物件的時候，可以使用arrow(參數一,參數二,...)這樣的方式來控制。一般而言，為了方便控制這個物件，都會為他設定一個變數，如x=arrow(參數一,參數二,...)。此時在操作這個物件的時候，便能用「.」來連結物件中的參數，如x.color=(0,0.2,0.3)。<br><br>
     <li><b>按住滑鼠右鍵滑動可旋轉畫面</b><br><br>
-    <li><b>按住滑鼠左右兩鍵滑動可縮放畫面</b><br><br>
-    <li><b>vector(x,y,z)</b></li>
-    在vpython裡會配合向量來使用一些參數，方便的地方是向量vector(x,y,z)在程式執行的時候，與直接打(x,y,z)有相同的效果。<br><br>
+    <li><b>按住滑鼠左右兩鍵滑動可縮放畫面</b><br><br>    
     <li><b>視窗(<a href='http://www.vpython.org/contents/docs_vp5/visual/display.html' target="_blank"STYLE="text-decoration:none" >display</a>)</b></li>
     本功能要有畫上物件才會顯示視窗，display()幾次，就會跳出幾個視窗。<br><br>
     <table border=1 width=500>
@@ -151,12 +151,15 @@ edited by 陳柏因
 <hr>
 <h2><a name="c">標示工具</a></h2>
 <ul>
-    <li><h3>曲線(<a name='c1' href='http://www.vpython.org/contents/docs_vp5/visual/curve.html' target="_blank"STYLE="text-decoration:none" >curve</a>)</h3></li>
+    <li><h3>行進軌跡(<a name='c1' href='http://www.glowscript.org/docs/VPythonDocs/trail.html' target="_blank"STYLE="text-decoration:none" >make trail</a>)</h3></li>
+        要使用這個功能的話，首先要將make_trail啟動，如<b>ball.make_trail=True</b>。預設的顯示路徑為連起來的曲線，如果要清除所有路徑的話，則可下clear_trail()這個指令。以下為可更動的參數。
         <table border=1 width=500>
             <td><b>參數</b></td><td><b>定義</b></td><td><b>範例</b></td><tr>
-            <td>color</td><td>顏色</td><td>color=(0.2,0.3,0.4)</td><tr>
-            <td>pos</td><td>紀錄點</td><td>pos=[(0,0,0),(0,1,0),(1,1,0)]</td><tr>
-            <td>radius</td><td>線寬</td><td>radius=0.01</td>
+            <td>trail_color</td><td>顏色</td><td>trail_color=(0.2,0.3,0.4)</td><tr>
+            <td>trail_type</td><td>紀錄點的種類</td><td>trail_type="points"</td><tr>            
+            <td>trail_radius</td><td>點的半徑</td><td>trail_radius=0.01</td><tr>
+            <td>retain</td><td>欲保留的紀錄點個數</td><td>retain=50</td><tr>
+            <td>interval</td><td>間隔(每移動幾次就記錄一個點)</td><td>interval=10</td>
         </table>
         
     <li><h3>標籤(<a name='c2' href='http://www.vpython.org/contents/docs_vp5/visual/label.html' target="_blank"STYLE="text-decoration:none" >label</a>)</h3></li>
@@ -189,8 +192,15 @@ edited by 陳柏因
         local_light(pos=(x,y,z), color=color.yellow)
         <li>有方向的光源</li>
         distant_light(direction=(x,y,z), color=color.red)
-
     </ul>
+    
+    <li><h3>曲線(<a name='c5' href='http://www.vpython.org/contents/docs_vp5/visual/curve.html' target="_blank"STYLE="text-decoration:none" >curve</a>)</h3></li>
+        <table border=1 width=500>
+            <td><b>參數</b></td><td><b>定義</b></td><td><b>範例</b></td><tr>
+            <td>color</td><td>顏色</td><td>color=(0.2,0.3,0.4)</td><tr>
+            <td>pos</td><td>紀錄點</td><td>pos=[(0,0,0),(0,1,0),(1,1,0)]</td><tr>
+            <td>radius</td><td>線寬</td><td>radius=0.01</td>
+        </table>
     
 </ul>
 <hr>
@@ -214,6 +224,23 @@ edited by 陳柏因
     第二種則是使用RGB的比例來配色，RGB各個參數的範圍為0到1，因此在參照網路上提供的<a href='http://www.w3schools.com/colors/colors_picker.asp'STYLE="text-decoration:none" target="_blank" >配色表</a>所得到的RGB值須在除上255，如color=(0.2,0.3,0.4)。<br><br>
     <b>不透明度</b><br>
     值的範圍在0到1之間，0為完全透明
-</ul>	
+
+	<li><h3>向量(<a name='d3' href='http://www.glowscript.org/docs/VPythonDocs/vector.html' target="_blank"STYLE="text-decoration:none" >vector</a>)</h3></li>
+    在vpython裡會配合向量來使用一些參數，以vector(x,y,z)來表示。方便的地方是向量vector(x,y,z)在程式執行的時候，與直接打(x,y,z)有相同的效果。以下為Vpython中可使用的向量運算函式<br><br>
+    <table border=1 width=500>
+        <td><b>意義</b></td><td><b>範例</b></td><tr>
+        <td>向量大小(絕對值)</td><td>mag(A)</td><tr>
+        <td>絕對值平方</td><td>mag2(A)</td><tr>
+        <td>歸一化</td><td>norm(A)</td><tr>
+        <td>內積</td><td>dot(A,B)</td><tr>
+        <td>外積</td><td>cross(A,B)</td><tr>
+        <td>兩向量夾角 (單位:弧度)</td><td>diff_angle(A,B)</td><tr>
+        <td>A在B方向的分量</td><td>proj(A,B)</td><tr>
+        <td>proj(A,B)的值</td><td>comp(A,B)</td><tr>
+        <td>判斷兩項量是否相同</td><td>A.equals(B)</td><tr>
+        <td>生成隨機向量</td><td>vector.random()</td>
+    </table>
+    
+</ul>
 </body>
 </html>
