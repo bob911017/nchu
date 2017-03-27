@@ -21,13 +21,15 @@ edited by 陳柏因
       <li><a href="#a" STYLE="text-decoration:none">畫面操作</a>
       <li><a href="#b" STYLE="text-decoration:none">物件</a>
       <ul>
-          <li><a href="#b1" STYLE="text-decoration:none">箭頭</a>
-          <li><a href="#b2" STYLE="text-decoration:none">方形</a>
-          <li><a href="#b3" STYLE="text-decoration:none">圓柱</a>
-          <li><a href="#b4" STYLE="text-decoration:none">橢球</a>
-          <li><a href="#b5" STYLE="text-decoration:none">彈簧</a>
-          <li><a href="#b6" STYLE="text-decoration:none">圓環</a>
-          <li><a href="#b7" STYLE="text-decoration:none">圓球</a>
+          <li><a href="#b1" STYLE="text-decoration:none">箭頭arrow</a>
+          <li><a href="#b2" STYLE="text-decoration:none">方形square</a>
+          <li><a href="#b3" STYLE="text-decoration:none">圓柱cylinder</a>
+          <li><a href="#b4" STYLE="text-decoration:none">橢球ellipsoid</a>
+          <li><a href="#b5" STYLE="text-decoration:none">彈簧helix</a>
+          <li><a href="#b6" STYLE="text-decoration:none">圓環ring</a>
+          <li><a href="#b7" STYLE="text-decoration:none">圓球sphere</a>
+          <li><a href="#b8" STYLE="text-decoration:none">圓錐cone</a>
+          <li><a href="#b9" STYLE="text-decoration:none">四角錐pyramid</a>
       </ul>
       <li><a href="#c" STYLE="text-decoration:none">標示工具</a>
       <ul>
@@ -142,10 +144,34 @@ edited by 陳柏因
     	<td><b>參數</b></td><td><b>定義</b></td><td><b>範例</b></td><tr>
         <td>color</td><td>顏色</td><td>color=(0.2,0.3,0.4)</td><tr>
         <td>pos</td><td>中心為起點</td><td>pos=(0,1,2)</td><tr>
-        <td>radius</td><td>半徑</td><td>radius=0.1</td><tr>
+        <td>radius</td><td>圓半徑</td><td>radius=0.1</td><tr>
         <td>material</td><td>材質</td><td>material=materials.earth</td><tr>
         <td>opacity</td><td>不透明度</td><td>opacity=0.5</td>
-    </table>   
+    </table>  
+    
+    <li><h3>圓錐(<a name='b8' href='http://www.vpython.org/contents/docs_vp5/visual/cone.html' target="_blank"STYLE="text-decoration:none" >cone</a>)</h3></li>
+    <table border=1 width=500>
+    	<td><b>參數</b></td><td><b>定義</b></td><td><b>範例</b></td><tr>
+        <td>color</td><td>顏色</td><td>color=(0.2,0.3,0.4)</td><tr>
+        <td>pos</td><td>底的圓心為起點</td><td>pos=(0,1,2)</td><tr>
+        <td>axis</td><td>從pos延伸的方向</td><td>axis=(1,2,1)</td><tr>
+        <td>radius</td><td>半徑</td><td>radius=0.1</td><tr>
+        <td>length</td><td>圓錐高度</td><td>length=2</td><tr>
+        <td>material</td><td>材質</td><td>material=materials.earth</td><tr>
+        <td>opacity</td><td>不透明度</td><td>opacity=0.5</td>
+    </table>  
+    
+    <li><h3>四角錐(<a name='b9' href='http://www.vpython.org/contents/docs_vp5/visual/pyramid.html' target="_blank"STYLE="text-decoration:none" >pyramid</a>)</h3></li>
+    <table border=1 width=500>
+    	<td><b>參數</b></td><td><b>定義</b></td><td><b>範例</b></td><tr>
+        <td>color</td><td>顏色</td><td>color=(0.2,0.3,0.4)</td><tr>
+        <td>pos</td><td>底的中心為起點</td><td>pos=(0,1,2)</td><tr>
+        <td>axis</td><td>從pos延伸的方向</td><td>axis=(1,2,1)</td><tr>
+        <td>radius</td><td>半徑</td><td>radius=0.1</td><tr>
+        <td>length</td><td>角錐高度</td><td>length=2</td><tr>
+        <td>material</td><td>材質</td><td>material=materials.earth</td><tr>
+        <td>opacity</td><td>不透明度</td><td>opacity=0.5</td>
+    </table>  
 
 </ul>
 <hr>
@@ -210,11 +236,18 @@ edited by 陳柏因
 <ul>
     <li><h3>材質(<a name='d1' href='http://www.vpython.org/contents/docs_vp5/visual/materials.html' target="_blank"STYLE="text-decoration:none" >material</a>)</h3></li>
     materials.wood<br>
-    materials.rough<br>
+    materials.bricks<br>
     materials.marble<br>
     materials.plastic<br>
+    materials.glass<br>
+    materials.ice<br>
+    materials.silver<br>
+    materials.chrome<br>
     materials.earth<br>
+    materials.BlueMarble<br>
     materials.diffuse<br>
+    materials.blazed<br>
+    materials.rough<br>
     materials.emissive (looks like it glows)<br>
     materials.unshaded (unaffected by lighting)<br><br>
     
