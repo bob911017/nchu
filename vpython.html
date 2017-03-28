@@ -30,6 +30,7 @@ edited by 陳柏因
           <li><a href="#b7" STYLE="text-decoration:none">圓球sphere</a>
           <li><a href="#b8" STYLE="text-decoration:none">圓錐cone</a>
           <li><a href="#b9" STYLE="text-decoration:none">四角錐pyramid</a>
+          <li><a href="#b10" STYLE="text-decoration:none">自訂圖形extrusion</a>
       </ul>
       <li><a href="#c" STYLE="text-decoration:none">標示工具</a>
       <ul>
@@ -54,8 +55,8 @@ edited by 陳柏因
 <ul>
     <li><b>參數使用方法</b><br>
     舉例來說，當要使用arrow這個物件的時候，可以使用arrow(參數一,參數二,...)這樣的方式來控制。一般而言，為了方便控制這個物件，都會為他設定一個變數，如x=arrow(參數一,參數二,...)。此時在操作這個物件的時候，便能用「.」來連結物件中的參數，如x.color=(0,0.2,0.3)。<br><br>
-    <li><b>按住滑鼠右鍵滑動可旋轉畫面</b><br><br>
-    <li><b>按住滑鼠左右兩鍵滑動可縮放畫面</b><br><br>    
+    <li><b>按住滑鼠右鍵滑動滑鼠可旋轉畫面</b><br><br>
+    <li><b>按住滑鼠左右兩鍵滑動滑鼠可縮放畫面</b><br><br>    
     <li><b>視窗(<a href='http://www.vpython.org/contents/docs_vp5/visual/display.html' target="_blank"STYLE="text-decoration:none" >display</a>)</b></li>
     本功能要有畫上物件才會顯示視窗，display()幾次，就會跳出幾個視窗。<br><br>
     <table border=1 width=500>
@@ -172,6 +173,19 @@ edited by 陳柏因
         <td>material</td><td>材質</td><td>material=materials.earth</td><tr>
         <td>opacity</td><td>不透明度</td><td>opacity=0.5</td>
     </table>  
+    
+    <li><h3>自訂圖形(<a name='b10' href='http://www.glowscript.org/docs/VPythonDocs/extrusion.html' target="_blank"STYLE="text-decoration:none" >extrusion</a>)</h3></li>
+自訂圖案是利用拉伸(extrusion)一個2D圖案的功能來創造。建造的步驟有三點，分別是繪製一個2D圖案、設定拉伸路徑，接著將圖拉出來。<br><br>
+<ol>
+	<li><h4>繪製2D圖案</h4></li>
+    繪製2D圖案的方法是利用建立一個個點，再將這些點連起來的方式形成。如tri=[[2,0],[0,4],[-2,0],[2,0]]，就能形成一個三角形。在製造的過程中，有時候會需要使用到圖形的疊加或削減，這個時候只要配合「+」和「-」來使用即可。<br><br>
+    當然Vpython有許多別人已經設計好，供我們直接輸入參數，並製造2D圖形的模組。如circ=shapes.circle(radius=3)，這方面的資料可以參考<a href='http://www.glowscript.org/docs/VPythonDocs/shapes.html' target="_blank"STYLE="text-decoration:none" ><b>shapes</b></a>這個網站。
+    <li><h4>設定拉伸路徑</h4></li>
+    方式為建立2D圖要行經的座標，如path=[(0,0,0),(0,0,1),(0,1,1)]
+    <li><h4>拉伸圖案</h4></li>
+    使用的格式為extrusion(pos=路徑, shape=2D圖案, color=顏色)，以下為範例<br><br>
+    extrusion(pos=path, shape=tri, color=color.red)
+</ol>
 
 </ul>
 <hr>
