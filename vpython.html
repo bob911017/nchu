@@ -46,6 +46,11 @@ edited by 陳柏因
           <li><a href="#d2" STYLE="text-decoration:none">顏色與不透明度</a>
           <li><a href="#d3" STYLE="text-decoration:none">向量</a>
       </ul>
+      <li><a href="#e" STYLE="text-decoration:none">與Vpython互動</a>
+      <ul>
+      	<li><a href="#e1" STYLE="text-decoration:none">滑鼠操作</a>
+        <li><a href="#d3" STYLE="text-decoration:none">範例</a>
+      </ul>
   </h5></ul>
   </td>
 </table>
@@ -288,6 +293,28 @@ edited by 陳柏因
         <td>生成隨機向量</td><td>vector.random()</td>
     </table>
     
+</ul>
+
+<hr>
+<h2><a name="e">與Vpython互動</a></h2>
+<ul>
+	<li><h3><a name='e1'>滑鼠操作</a></h3></li>
+    <ul>
+    	<li>scene.mouse.clicked</li>
+        記錄點擊滑鼠左鍵的次數<br><br>
+		<li>scene.mouse.getclick()</li>
+        會將已記錄的點擊次數歸零<br><br>
+		<li>scene.mouse.shift</li>
+        當壓住shift鍵，並點擊滑鼠左鍵時，輸出為True，其餘為False,而scene.mouse.ctrl 和 scene.mouse.alt使用上類似<br><br>
+		<li>scene.mouse.pos</li>
+        會紀錄滑鼠位置<br><br>
+		<li>scene.mouse.pick</li>
+        判斷滑鼠位置在哪個物件上<br><br>
+    </ul>
+    
+    <li><h3><a name='e2'>範例</a></h3></li>
+    <a href='./example/traffic light.py' target="_blank"STYLE="text-decoration:none" >紅綠燈</a><br>
+    <a href='./example/blackboard.py' target="_blank"STYLE="text-decoration:none" >黑板</a>
 </ul>
 </body>
 </html>
