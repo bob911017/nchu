@@ -40,18 +40,18 @@ while True:
     #點擊滑鼠2n+1次，進入正常模式############################################
     if scene.mouse.clicked%2.0==1:          
         if t<=2*play:   #亮綠燈兩秒
-            label.text=u'點擊滑鼠轉為閃黃燈'+'\n            '+str(t/play)
+            label.text=u'點擊滑鼠轉為閃黃燈'+'\n            '+str(2-t/play)
             g.color=color.green
             r.color=color.gray(0.5)
             y.color=color.gray(0.5)
             t+=1
         elif t<=3*play: #亮黃燈一秒
-            label.text=u'點擊滑鼠轉為閃黃燈'+'\n            '+str(t/play-2)
+            label.text=u'點擊滑鼠轉為閃黃燈'+'\n            '+str(3-t/play)
             y.color=color.yellow
             g.color=color.gray(0.5)
             t+=1
         elif t<=8*play: #亮紅燈五秒
-            label.text=u'點擊滑鼠轉為閃黃燈'+'\n            '+str(t/play-3)
+            label.text=u'點擊滑鼠轉為閃黃燈'+'\n            '+str(8-t/play)
             r.color=color.red
             y.color=color.gray(0.5)
             t+=1
