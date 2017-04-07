@@ -27,7 +27,7 @@ while True:
     rate(1/dt)
     a.pos.x=r.value*np.cos(w*t) #x=r*cos(w*t)
     a.pos.y=r.value*np.sin(w*t) #y=r*sin(w*t)
-    lf.text=u'Centripetal force='+str(round(m.value*w*(a.pos.x**2+a.pos.y**2),2))+'N'
+    lf.text=u'Centripetal force='+str(round(m.value*w*w*np.sqrt(a.pos.x**2+a.pos.y**2),2))+'N'
     lr.text=u'radius='+str(round(r.value,2))+' m'
     lm.text=u'mass='+str(round(m.value,2))+' kg'
     t+=dt
