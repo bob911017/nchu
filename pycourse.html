@@ -48,17 +48,18 @@ edited by 陳柏因
           <li><a href="#e3" STYLE="text-decoration:none">解ODE常微分方程</a>
       </ul>
       <li><a href="#f" STYLE="text-decoration:none">2017/03/24</a>
+      <li><a href="#g" STYLE="text-decoration:none">2017/04/07</a>
   </h5></ul>
   </td>
 </table>
 <hr>
 <h2>重要更新內容</h2>
 <ul>
+	<li><b>2017/04/09_22:31: 2017/04/07內容更新</b>
+	<li><b>2017/04/09_22:31: VPYTHON_教學後.pptx檔案已上傳至ecampus</b> 
 	<li><b>2017/03/24_10:50: 2017/03/24內容更新</b>
 	<li><b>2017/03/24_10:50: VPYTHON_教學.pptx檔案已上傳至ecampus</b> 
 	<li><b>2017/03/17_11:05: 2017/03/17內容更新</b>
-    <li><b>2017/03/17_11:05: Using Python20170317.pptx檔案已上傳至ecampus</b> 
-	<li><b>2017/03/16_15:38: 2017/03/17內容新增</b>
 </ul>
 <hr>
 <h2><a name="a">前言</a></h2>
@@ -554,7 +555,7 @@ plt.show()
 
 <h2><a name="f">2017/03/24</a></h2>
 要學習Vpython要怎麼用的話，基本上可以參考<b><a href="http://vpython.org/" STYLE="text-decoration:none" target="_blank">Vpython</a>、<a href="http://www.glowscript.org/docs/VPythonDocs/index.html" STYLE="text-decoration:none" target="_blank">Vpython Help</a>和<a href="http://tcjd71.wixsite.com/vpython" STYLE="text-decoration:none" target="_blank">VPhysics NTU</a></b>這些網站就好。裡面也沒什麼太難的技巧，就只是在將各種參數輸入模型裡就行。<br>
-<a href="./vpython.html" STYLE="text-decoration:none" target="_blank">參數表</a>
+<a href="./vpython.html" STYLE="text-decoration:none" target="_blank"><b>參數表</b></a>
 <ul>
 	<li><h3>上課講義</h3></li>
     <pre>
@@ -654,6 +655,115 @@ while True:
 	2.將二維碰撞程式碼用”#”註解<br>
 
 </ul>
+<hr>
 
+<h2><a name="g">2017/04/07</a></h2>
+<ul>
+	<li><h3>彈簧運動</h3></li>
+    <pre>
+from visual import *
+
+g = 9.8          
+size = 0.05         
+r = 0.5             
+k = 10             
+m = 0.2             
+'-----------------------------------------------------------------------------'
+scene = display(width=800, height=800, center=(0, -r*0.6, 0), background=(0.5,0.5,0))  
+ceiling = box(length=0.8, height=0.005, width=0.8, color=color.blue)                   
+ball = sphere(radius = size,  color=color.red)                              
+spring = helix(radius=0.02)                                
+
+ball.pos0 = vector(0, -r, 0) 					
+ball.pos = vector(0, -r , 0)        				
+ball.v = vector(0, 0, 0)            					
+'------------------------------------------------------------------------------'
+dt = 0.001   
+while True :
+    rate(1000)
+    spring.axis = ball.pos - spring.pos 		
+
+    ball.a = vector(0, - g - k * (ball.pos.y - ball.pos0.y )/m , 0)
+						
+
+    ball.v +=   ball.a*dt
+    ball.pos += ball.v*dt
+    </pre>
+    
+    <li><h3>二維碰撞</h3></li>
+    <pre>
+from visual import *
+size = 0.1          
+
+scene = display(width=800, height=800,  background=(0.5,0.5,0))             	
+b1 = sphere(radius = size,  color=color.yellow)         				
+b2 = sphere(radius = size,  color=color.green)          				
+
+b1.pos = vector( 0.6 , 0.1, 0)                        	
+b2.pos = vector( 0 , 0 , 0)                           	
+b1.v = vector(-0.2, 0, 0)                              	
+b2.v = vector(0 , 0, 0)                                	
+
+dt = 0.001                                                          
+while True:
+    rate(1000)
+					
+    b1.pos += b1.v * dt 
+    b2.pos += b2.v * dt
+
+    if abs(b1.pos - b2.pos)&lt;=2*size and dot(b1.v, b2.v) &lt;= 0 :
+        v1prime = b1.v - (b1.pos-b2.pos)  * dot (b1.v-b2.v, b1.pos-b2.pos) / abs(b1.pos-b2.pos)**2
+        v2prime = b2.v - (b2.pos-b1.pos)  * dot (b2.v-b1.v, b2.pos-b1.pos) / abs(b2.pos-b1.pos)**2
+        b1.v, b2.v = v1prime, v2prime
+
+    </pre>
+    <li><h3>彈簧運動向量</h3></li>
+    <pre>
+from visual import *
+
+g = 9.8            
+size = 0.05       
+r = 0.5            
+k = 10            
+m = 0.2             
+
+scene = display(width=800, height=800, center=(0, -r*0.6, 0), background=(0.5,0.5,0))  
+ceiling = box(length=0.8, height=0.005, width=0.8, color=color.blue)                    
+ball = sphere(radius = size,  color=color.red)                             
+spring = helix(radius=0.02)                               
+
+ball.pos0 = vector(0, -r, 0) 					
+ball.pos = vector(0, -r , 0)        					
+ball.v = vector(0, 0, 0)            					
+
+ball_v_arrow = arrow(shaftwidth = 0.01)
+ball_a_arrow = arrow(shaftwidth = 0.01)  #軸
+
+dt = 0.001   
+while True:
+    rate(100)
+    spring.axis = ball.pos - spring.pos 		
+
+    ball.a = vector(0, - g - k * (ball.pos.y - ball.pos0.y )/m , 0)
+						
+
+    ball.v +=   ball.a*dt
+    ball.pos += ball.v*dt
+
+    ball_v_arrow.pos = ball.pos + vector(size, 0, 0)
+    ball_v_arrow.axis = ball.v / 5.0
+
+    ball_a_arrow.pos = ball.pos - vector(size, 0, 0)
+    ball_a_arrow.axis = ball.a / 50.0
+
+    </pre>
+	<li><h3>Homework</h3></li>
+    試著用彈簧運動模型，做出阻尼運動模型出來。<br><br>
+
+Hint: 可以利用作業四的運動方程式，把運動公式寫出來<br>
+
+請記得 # 詳記註解
+
+</ul>
 </body>
 </html>
